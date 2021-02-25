@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{The connection between M and the probability density function}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Subspace-Constrained Derivatives}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Hessian Matrix Decomposition for ph\(x\)}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Ridge and Manifold}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{l-SCRE vs SCRE}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{l-SCRE in a Nutshell}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Main Contributions}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.8}{Notations}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.9}{Related Work}{section.1}% 10
+\BOOKMARK [1][-]{section.2}{Manifold Estimation}{}% 11
+\BOOKMARK [2][-]{subsection.2.1}{Ridge Definition}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.2}{Ridge Estimation and Error Measurement}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.3}{Derivatives for KDE}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Derivative Bias}{subsection.2.3}% 15
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Derivative Variance}{subsection.2.3}% 16
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Optimal-Parameter Dilemma}{subsection.2.3}% 17
+\BOOKMARK [1][-]{section.3}{l-SCRE}{}% 18
+\BOOKMARK [2][-]{subsection.3.1}{Parameter Setup}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.2}{Upper Bound of the Bias}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.3}{Ridge-Improvement Justification}{section.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Variance of Upper Bound}{subsection.3.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Estimation for r,h\(x\)'s Derivatives}{subsection.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.4}{Ridge-Estimator Analysis}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.5}{Confidence Regions for M}{section.3}% 25
+\BOOKMARK [1][-]{section.4}{Transformation of r,h\(x\)}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{The Weighted-Covariance Form}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Eigenspace Analysis for Cr\(x\) and Jr\(x\)}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.3}{The Singular-Point Phenomenon}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.4}{Ridge Variation via Transformation}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.5}{Geometric Interpretation}{section.4}% 31
+\BOOKMARK [1][-]{section.5}{Numerical Experiments}{}% 32
+\BOOKMARK [2][-]{subsection.5.1}{Ridge Criteria}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.2}{Synthetic Data Set}{section.5}% 34
+\BOOKMARK [2][-]{subsection.5.3}{Real Data Set}{section.5}% 35
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 36
+\BOOKMARK [1][-]{appendix.A}{Ridge-Searching Algorithm}{}% 37
+\BOOKMARK [1][-]{appendix.B}{Uniform Framework for Manifold Fitting}{}% 38
+\BOOKMARK [2][-]{subsection.B.1}{Attraction Force}{appendix.B}% 39
+\BOOKMARK [2][-]{subsection.B.2}{Regularization Space}{appendix.B}% 40
+\BOOKMARK [2][-]{subsection.B.3}{Algorithm: Subspace-Constraint Iteration}{appendix.B}% 41
+\BOOKMARK [2][-]{subsection.B.4}{Complexity Analysis}{appendix.B}% 42
+\BOOKMARK [1][-]{section*.2}{Supplementary Material}{}% 43
+\BOOKMARK [1][-]{section*.4}{References}{}% 44

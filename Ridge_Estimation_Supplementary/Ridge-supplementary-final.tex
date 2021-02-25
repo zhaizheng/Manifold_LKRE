@@ -3,7 +3,7 @@
 %% Packages
 \RequirePackage{amsthm,amsmath,amsfonts,amssymb,multirow,bbm}
 %\RequirePackage[numbers]{natbib}
-%\RequirePackage[authoryear]{natbib} %% uncomment this for author-year bibliography
+\RequirePackage[authoryear]{natbib} %% uncomment this for author-year bibliography
 \RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
 \RequirePackage{graphicx,graphics,epstopdf}
 \RequirePackage{soul}
@@ -50,7 +50,7 @@
 \begin{document}
 
 \begin{frontmatter}
-\title{supplementary material for "manifold fitting by ridge estimation: a local kernel density estimation approach"}
+\title{supplementary material for ``manifold fitting by ridge estimation: a subspace-constrained approach''}
 %\title{A sample article title with some additional note\thanksref{t1}}
 \runtitle{Manifold fitting by ridge estimation}
 %\thankstext{T1}{A sample additional note to the title.}
@@ -112,7 +112,7 @@
 %\end{aug}
 
 \begin{abstract}
-In this supplement we present the technical proofs for the main work. Equation and theorem references made to the main document do not contain letters.
+In this supplement we present the technical proofs for the main work. Equation and theorem references to the main document do not contain letters.
 \end{abstract}
 
 
@@ -144,33 +144,36 @@ In this supplement we present the technical proofs for the main work. Equation a
 %% with 50 pages and more                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\tableofcontents
-
 \begin{appendix}
 \section{PROOFS FOR MAIN THEOREMS AND LEMMAS}
-In this section, we prove all key theorems and lemmas in the order they appear.
-\subsection{Ridge Derivative Lemma}
+In this section, we prove all key theorems and lemmas in the order in which they appear.
+\subsection{Ridge-Derivative Lemma}
 \begin{lemma}{ 
-For any $R_1$, $R_2$, and any point $x_1\in R_1$, the pairwise distance from $x_1$ to $R_2$ yields the order of: %$\min_{x_2\in R_2}\|x_1-x_2\|_2$ %between any two ridges $R_1$ and $R_2$ 
+For any $R_1$, $R_2$, and any point $x_1\in R_1$, the pairwise distance from $x_1$ to $R_2$ yields the order of %$\min_{x_2\in R_2}\|x_1-x_2\|_2$ % between any two ridges $R_1$ and $R_2$. 
 %is of order $O(\|H_1(x_1)-H_2(x_1)\|_F+\|g_1(x_1)-g_2(x_1)\|_2)$, 
 \[
 \min_{x_2\in R_2}\|x_1-x_2\|_2 = O(\|H_1(x_1)-H_2(x_1)\|_F+\|g_1(x_1)-g_2(x_1)\|_2)
 \]
-where $H_1(x_1), g_1 (x_1)$ are the Hessian and gradient of some estimated density function $p_1(x_1)$ evaluated at $x_1$; $H_2(x_1)$ and $g_2(x_1)$ are the Hessian and gradient of the density function of $p_2(x)$ evaluated at $x_1$, respectively.
+where $H_1(x_1)$ and $g_1 (x_1)$ are the Hessian and gradient of some estimated density function $p_1(x_1)$ evaluated at $x_1$, respectively; $H_2(x_1)$ and $g_2(x_1)$ are the Hessian and gradient of the density function of $p_2(x)$ evaluated at $x_1$, respectively.
 %For any two ridges $R, \hat{R}$ defined by $R = \{x| \Pi_{H}(x)g(x) = 0\}$,$\hat{R} = \{x| \Pi_{\hat{H}}(x))\hat{g}(x) = 0\}$, 
  %$d(x, \hat{R}) = O(\|\hat{H}(x)-H(x)\|_F+\|\hat{g}(x)-g(x)\|_2)$
  }\label{margin}
 \end{lemma}
 
-The following proof is a revised simple version of a similar proof in \cite{genovese2014nonparametric}. For completeness, we also include it in our paper.
+
+The following proof is a revised, simplified version of a similar proof in \cite{genovese2014nonparametric}. For completeness, we include it in our paper.
+
 
 \begin{proof}\label{Ridge Derivative Lemma}
- For two ridges $R_1, R_2$, we have two density functions $p_1(x)$ and $p_2(x)$ such that the points on each ridge satisfy the solution of
+For two ridges $R_1, R_2$, we have two density functions $p_1(x)$ and $p_2(x)$ such that the points on each ridge satisfy the solution of
  $\Pi_{H_1}(x) g_1(x) = 0$ 
- and $\Pi_{H_2}(x) g_2(x) = 0$ respectively. For any starting point $x_a \in R_1$, we can build a unit speed curve $\gamma(s)$ derived from the gradient and Hessian of $p_2(x)$ as
- \[
- \gamma_2(0) = x_a \in R_1, \quad \gamma_2(t_0) = x_b \in R_2, \quad \gamma'_2(s) = \frac{\Pi_{H_2}(\gamma(s))g_2(\gamma(s))}{\|\Pi_{H_2}(\gamma(s))g_2(\gamma(s))\|_2}.
- \]
-Note that the curve $\gamma(t)$ connect $x_a$ with $R_2$ by $x_b$. Define the univariate function $\xi(s)$ as
+ and $\Pi_{H_2}(x) g_2(x) = 0$, respectively. For any starting point $x_a \in R_1$, we can build a unit speed curve $\gamma(s)$ derived from the gradient and Hessian of $p_2(x)$:
+ \begin{gather*}
+ \gamma_2(0) = x_a \in R_1,\\
+ \gamma_2(t_0) = x_b \in R_2,\\
+ \gamma'_2(s) = \frac{\Pi_{H_2}(\gamma(s))g_2(\gamma(s))}{\|\Pi_{H_2}(\gamma(s))g_2(\gamma(s))\|_2}.
+ \end{gather*}
+Note that the curve $\gamma(t)$ connects $x_a$ with $R_2$ by $x_b$. The univariate function $\xi(s)$ is defined as
   \[
   \xi_2(s) = p_2(\gamma_2(t_0))-p_2(\gamma_2(s)), \quad 0<s<t_0.
   \]
@@ -182,36 +185,56 @@ Through a simple computation, we know
  %\xi''(s) = \frac{\langle L_{\gamma'(s)}(\gamma(s)) g(\gamma(s)), L(\gamma(s)g(\gamma(s)))\rangle}{\|L(\gamma(s))g(\gamma(s))\|_2}
  %\]
  %with $\gamma(s)=\frac{L(\gamma(s)g(\gamma(s)))}{\|L(\gamma(s)g(\gamma(s)))\|}$
- The distance from $x_a$ to $R_2$ can be bounded by the curve length of $\gamma_2(t)$ which is $t_0$
- \[
- d(x_a, R_2) = \|x_a-P_{R_2}(x_a)\|_2\leq \|x_a-x_b\|_2 = \|\gamma_2(t_0)-\gamma_2(0)\|_2\leq t_0.
- \]
-Finally, the problem becomes to bound $t_0$. Suppose $\sup_u \xi''_2(u)>\frac{1}{c}$, by the mean-value theorem, we have
- \[
- t_0 = \frac{\xi'_2(t_0)-\xi'_2(0)}{\xi''_2(u)} = \frac{\|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2}{\xi''_2(u)} \leq c \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2.
- \]
- Next, we show that $\|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2$ is of the same order with an approximation error of $H_2(x)$ and $g_2(x)$:
+ The distance from $x_a$ to $R_2$ can be bounded by the curve length of $\gamma_2(t)$, which is $t_0$:
  \[
  \begin{aligned}
- \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2=&  \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))g_1(\gamma_2(0))\|_2\\
- \leq & \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0)) -\Pi_{H_1}(\gamma_2(0)){g_2}(\gamma_2(0)) \|_2 +...\\
- & + \|\Pi_{H_1}(\gamma_2(0)){g_2}(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))g_1(\gamma_2(0))\|_2\\
- \leq & \|\Pi_{H_2}(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))\|_F\|g_2(\gamma_2(0))\|_2 +...\\
- &+\|\Pi_{H_1}(\gamma_2(0))\|_F\|g_2(\gamma_2(0))-g_1(\gamma_2(0))\|_2, \\
+ &d(x_a, R_2) \\
+ =& \|x_a-P_{R_2}(x_a)\|_2\\
+ \leq& \|x_a-x_b\|_2 \\
+ = &\|\gamma_2(t_0)-\gamma_2(0)\|_2\leq t_0.
+ \end{aligned}
+ \]
+Finally, the problem becomes how best to bound $t_0$. Suppose $\sup_u \xi''_2(u)>\frac{1}{c}$; then, by the mean-value theorem, we have
+ \[
+ \begin{aligned}
+ t_0 = &\frac{\xi'_2(t_0)-\xi'_2(0)}{\xi''_2(u)} \\
+ = &\frac{\|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2}{\xi''_2(u)} \\
+ \leq & c \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2.
+ \end{aligned}
+ \]
+ Next, we show that $\|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2$ is of the same order as an approximation error of $H_2(x)$ and $g_2(x)$:
+ \begin{equation}
+ \begin{aligned}\label{bound_temp1}
+ &\|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0))\|_2\\
+ =&  \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))g_1(\gamma_2(0))\|_2
+ \end{aligned}
+ \end{equation}
+ Using the triangle inequality with respect to the $\|\|_2$ norm, we determine that \eqref{bound_temp1} is dominated by
+ \begin{equation}\label{bound_temp2}
+ \begin{aligned}
+& \|\Pi_{H_2}(\gamma_2(0))g_2(\gamma_2(0)) -\Pi_{H_1}(\gamma_2(0)){g_2}(\gamma_2(0)) \|_2 +...\\
+ & \quad \quad  \quad \quad  \quad \quad + \|\Pi_{H_1}(\gamma_2(0)){g_2}(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))g_1(\gamma_2(0))\|_2\\
+ \end{aligned}
+ \end{equation}
+ For any matrix $A$, using the Cauchy-Schwartz inequality on each row of $A$, we will get the result $\|Ax\|_2\leq \|A\|_F\|x\|_2$. Thus, similarly, we determine that \eqref{bound_temp2} is dominated by
+ \[
+ \begin{aligned}
+ & \|\Pi_{H_2}(\gamma_2(0)) - \Pi_{H_1}(\gamma_2(0))\|_F\|g_2(\gamma_2(0))\|_2 +...\\
+ &\quad \quad  \quad \quad  \quad \quad  +\|\Pi_{H_1}(\gamma_2(0))\|_F\|g_2(\gamma_2(0))-g_1(\gamma_2(0))\|_2, \\
  \end{aligned}.
  \]
- where the last inequality is obtained by applying the Cauchy-Schwartz inequality on each row of $A$, to get the result $\|Ax\|_2\leq \|A\|_F\|x\|_2$. According to the Davis-Kahan theorem, $\|\Pi_{H_2}(\gamma_2(t))-\Pi_{H_1}(\gamma_2(t))\|_F \leq \beta\|H_2(\gamma_2(t))-H_1(\gamma_2(t))\|_F$. The conclusion is proved!
+According to the Davis-Kahan theorem, $\|\Pi_{H_2}(\gamma_2(t))-\Pi_{H_1}(\gamma_2(t))\|_F \leq \beta\|H_2(\gamma_2(t))-H_1(\gamma_2(t))\|_F$. The conclusion is therefore proved.
 \end{proof}
 
 
-\subsection{Derivatives' Bias Bound}\label{bias_proof}
+\subsection{Bound of the Derivatives' Bias}\label{bias_proof}
 \begin{theorem}
 The bias of the first order and second order of the $\hat{p}_h(x)$ is 
 \begin{equation*}\label{BiasResult}
 |{\rm E}(\partial_{x_s}  \hat{p}_h(x)) - \partial_{x_s}p(x)|  = \frac{h^2|\Delta (\partial_{x_s}p(x))|}{2D}  \int \|u\|_2^2 K(u) du+o(h^2),
 \end{equation*}
 \begin{equation*}\label{order2}
-|{\rm E}( \partial_{x_s} \partial_{x_t}  \hat{p}_h(x)) -  \partial_{x_s} \partial_{x_t} p(x)| = \frac{h^2 |\Delta (\partial_{x_s}\partial_{x_t} p(x))|}{2D} \int \|u\|_2^2 K(u) du+o(h^2).
+|{\rm E}( \partial_{x_s} \partial_{x_t}  \hat{p}_h(x)) -  \partial_{x_s} \partial_{x_t} p(x)| = \frac{h^2 |\Delta (\partial_{x_s}\partial_{x_t} p(x))|}{2D} \int \|u\|_2^2 K(u) du+o(h^2),
 \end{equation*}
 where $\Delta$ is the Laplace-Beltrami operator.
 \end{theorem}
@@ -220,39 +243,54 @@ where $\Delta$ is the Laplace-Beltrami operator.
 Suppose the kernel function vanishes at infinity for each dimension, i.e., it satisfies $\lim_{u_s\rightarrow \infty}K(u)=0$ for each dimension. Then, using the integration-by-parts formula, we obtain the expectation of first-order derivatives:
 \begin{equation}\label{Expectation}
 \begin{aligned}
-{\rm E} (\partial_{x_s} \hat{p}_h(x)) &= \frac{1}{h^D} \int_{y\in \mathbb{R}^D}{\partial_{x_s}}  K(\frac{x-y}{h}) p(y) dy  \\
-&=\frac{1}{h^{D+1}}\int \partial_{z_s} K(z)|_{z=\frac{x-y}{h}} p(y) dy=h^{-1} \int_ {u\in \mathbb{R}^D} \partial_{u_s} K(u) p(x-hu)  d u\\
-&=h^{-1}\int_ {u\in \mathbb{R}^D} K(u) \partial_{u_s} p(x-hu) d u = \int_ {u\in \mathbb{R}^D} K(u) \partial_{z_s}p(z)|_{z=x-hu} d u.
+&{\rm E} (\partial_{x_s} \hat{p}_h(x)) \\
+\overset{s.1}{=}& \frac{1}{h^D} \int_{y\in \mathbb{R}^D}{\partial_{x_s}}  K(\frac{x-y}{h}) p(y) dy  \\
+\overset{s.2}{=}&\frac{1}{h^{D+1}}\int \partial_{z_s} K(z)|_{z=\frac{x-y}{h}} p(y) dy\\
+\overset{s.3}{=}&h^{-1} \int_ {u\in \mathbb{R}^D} \partial_{u_s} K(u) p(x-hu)  d u\\
+\overset{s.4}{=}&h^{-1}\int_ {u\in \mathbb{R}^D} K(u) \partial_{u_s} p(x-hu) d u \\
+\overset{s.5}{=}& \int_ {u\in \mathbb{R}^D} K(u) \partial_{z_s}p(z)|_{z=x-hu} d u.
 \end{aligned}
 \end{equation}
-For the multivariate function $\partial_{x_s} p(x)$, we have the Taylor expansion up to order 2 as
+
+The equation $s.1$ is the definition of the expectation. The equation $s.2$ is obtained from the derivative of the function composition. The equation $s.3$ is obtained from the formula of the integration by changing variables. The equation $s.4$ is obtained from the formula of the integration by partition. The equation $s.5$ is similar to equation $s.2$.
+
+For the multivariate function $\partial_{x_s} p(x)$, we have the Taylor expansion of $\partial_{x_s} p(x)$ up to order 2 as
 \begin{equation}\label{Taylor}
-\partial_{z_s} p(z)|_{z=x-hu}= \partial_{x_s} p(x) -  h u^T\nabla \partial_{x_s} p(x) + \frac{1}{2}h^2 u^T H(\partial_{x_s}p(x))u + o(h^2).
+\begin{aligned}
+&\partial_{z_s} p(z)|_{z=x-hu}\\
+= &\partial_{x_s} p(x) -  h u^T\nabla \partial_{x_s} p(x) + \frac{1}{2}h^2 u^T H(\partial_{x_s}p(x))u + o(h^2).
+\end{aligned}
 \end{equation}
+
 Since $u^T \nabla \partial_{x_s} p(x) K(u)$ is an odd function with respect to each variable $u_s$, we have the integration $\int u^T \nabla \partial_{x_s} p(x) K(u) du = 0 $ in a symmetric region. 
 
-For the term $u^T H(\partial_{x_s}p(x))u$, we know it is related with the Laplace Beltrami operator of $\Delta(\partial_{x_s}p(x))$ by
+For the term $u^T H(\partial_{x_s}p(x))u$, we know it is related to the Laplace-Beltrami operator of $\Delta(\partial_{x_s}p(x))$ by
 \[
 \begin{aligned}
 \int u^T H(\partial_{x_s}p(x))u K(u) du =& \langle \int uu^TK(u) du, H(\partial_{x_s}p(x))\rangle\\
-=&\frac{\int \|u\|_2^2K(u)du}{D} \langle  I, H(\partial_{x_s}p(x))\rangle\\
-=&\frac{\int \|u\|_2^2K(u)du}{D} \Delta(\partial_{x_s}p(x))
+\overset{s.6}{=}&\frac{\int \|u\|_2^2K(u)du}{D} \langle  I, H(\partial_{x_s}p(x))\rangle\\
+=&\frac{\int \|u\|_2^2K(u)du}{D} \Delta(\partial_{x_s}p(x)),
 \end{aligned}
 \]
-Merging the above results, we know the bias
+where the equation of $s.6$ is obtained from $\|u\|_2^2 = \sum_k u^2_k$, and
+\[
+\int u_k u_s K(u)du=0 \quad k\neq s,
+\] because of symmetric domain of integration and the independence  of each of the dimensions. 
+
+Combining the above results, we know the bias
 \begin{equation}\label{BiasResult}
 |{\rm E}(\partial_{x_s} \hat{p}_h(x)) - \partial_{x_s}p(x)|  = \frac{|\Delta(\partial_{x_s} p(x))|}{2D} h^2 \int \|u\|_2^2 K(u) du+o(h^2),
 \end{equation}
-where $\Delta(\partial_{x_s} p(x))$ is the Laplace-Beltrami operator of $\partial_{x_s} p(x)$, which is also the summation of the diagonal elements of the Hessian matrix $H(\partial_{x_s}p(x))$. Similarly, repeating the same procedure as \eqref{Expectation}\eqref{Taylor}, we have the second-order bias as
+where $\Delta(\partial_{x_s} p(x))$ is the Laplace-Beltrami operator of $\partial_{x_s} p(x)$, which is also the summation of the diagonal elements of the Hessian matrix $H(\partial_{x_s}p(x))$. Similarly, repeating the same procedure as for \eqref{Expectation}\eqref{Taylor}, we obtain the second-order bias,
 %where $\lambda_s(x)$ is the largest eigenvalue of the Hessian matrix $H(\partial_{x_s}p(x))$. 
 \begin{equation}\label{order2}
 |{\rm E}( \partial_{x_s} \partial_{x_t}   \hat{p}_h(x)) -  \partial_{x_s} \partial_{x_t} p(x)| = \frac{|\Delta(\partial_{x_s}\partial_{x_t} p(x))|}{2D} h^2 \int \|u\|_2^2 K(u) du+o(h^2).
 \end{equation}
-The same with \eqref{BiasResult}, $\Delta(\partial_{x_s}\partial_{x_t} p(x))$ is the Laplace-Beltrami operator of $\partial_{x_s}\partial_{x_t} p(x)$ which is also the summation of the eigenvalues of the matrix $M_{s,t}$ whose $i,j$-th element is $\frac{\partial^4}{\partial x_s\partial x_t \partial x_i \partial x_j} p(x)$.%, i.e., $\lambda_{st}(x)= \max_k \lambda_k( M_{st}(x))$.
+Likewise, with \eqref{BiasResult}, $\Delta(\partial_{x_s}\partial_{x_t} p(x))$ is the Laplace-Beltrami operator of $\partial_{x_s}\partial_{x_t} p(x)$ which is also the summation of the eigenvalues of the matrix $M_{s,t}$, whose $i,j$-th element is $\frac{\partial^4}{\partial x_s\partial x_t \partial x_i \partial x_j} p(x)$.%, i.e., $\lambda_{st}(x)= \max_k \lambda_k( M_{st}(x))$.
 \end{proof}
-\subsection{Derivatives' Variance Bound}\label{variance_proof}
+\subsection{Bound of the Derivatives' Variance}\label{variance_proof}
 \begin{theorem}
-The variance of the first and second order derivatives for $\hat{p}_h(x)$ has a bound as 
+The variance of the first- and second-order derivatives for $\hat{p}_h(x)$ has the following bound: 
 \begin{equation*}\label{VarResult}
 \begin{aligned}
 &{\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))| = \sqrt{\frac{\phi_s(x)}{n h^{D+2}}}+O(\frac{1}{n^{1/2}h^{(D+1)/2}}),\\
@@ -266,21 +304,29 @@ The variance of the first and second order derivatives for $\hat{p}_h(x)$ has a 
 Because of the i.i.d. assumption and the characters of the variance, the first-order derivative yields
 \[
 \begin{aligned}
- &{\rm Var} (\partial_{x_s} \hat{p}_h(x))  = {\rm Var} (\frac{1}{n h^D}\sum_k \partial_{x_s}(K(\frac{x-y_k}{h})))\\
-  = &\frac{1}{n h^{2D}} {\rm Var}(  \partial_{x_s} K(\frac{x-y}{h}))))=  \frac{1}{n h^{2D+2}} {\rm Var} (\partial_ {u_s}  K(u)|_{u=\frac{x-y}{h}}).%= \frac{1}{n h^{2d+4}} (E_y({k^{''}}^2_{rs}(\frac{x-y}{h}))- E_y^2(k^{''}_{rs}(\frac{x-y}{h}))
+ &{\rm Var} (\partial_{x_s} \hat{p}_h(x))  \\
+ \overset{s.7}{=} &{\rm Var} (\frac{1}{n h^D}\sum_k \partial_{x_s}(K(\frac{x-y_k}{h})))\\
+ \overset{s.8} = &\frac{1}{n h^{2D}} {\rm Var}(  \partial_{x_s} K(\frac{x-y}{h}))))\\
+ \overset{s.9} = & \frac{1}{n h^{2D+2}} {\rm Var} (\partial_ {u_s}  K(u)|_{u=\frac{x-y}{h}}).%= \frac{1}{n h^{2d+4}} (E_y({k^{''}}^2_{rs}(\frac{x-y}{h}))- E_y^2(k^{''}_{rs}(\frac{x-y}{h}))
 \end{aligned}
 \]
+As with the process used to derive the bias, equation $s.7$ is the definition of variance, equation $s.8$ is obtained from the independence of the samples of $y_k$, and equation $s.9$ is the result  of the derivative for the composite functions.
+
 Next, we derive the variance by using the equality of variance and expectation ${\rm Var}(a) = {\rm E}(a^2)-{\rm E}^2(a)$.
-In addition, let $M(\frac{x-y}{h}) = \partial_ {u_s}  K(u)|_{u=\frac{x-y}{h}}$, which will lead to
+In addition, letting $M(\frac{x-y}{h}) = \partial_ {u_s}  K(u)|_{u=\frac{x-y}{h}}$, the variance will be
 \begin{equation}\label{e11}
- {\rm Var} (\partial_{x_s} \hat{p}_h(x)) = \frac{1}{nh^{2D+2}}({\rm E}_y (M^2(\frac{x-y}{h}))-{\rm E}^2_y(M(\frac{x-y}{h}))).
+\begin{aligned}
+ &{\rm Var} (\partial_{x_s} \hat{p}_h(x))\\
+  = &\frac{1}{nh^{2D+2}}({\rm E}_y (M^2(\frac{x-y}{h}))-{\rm E}^2_y(M(\frac{x-y}{h}))).
 %\frac{1}{h^d}\int M(\frac{x-y}{h}) p(y)dy = \int M(u)p(x-uh) du=p(x) \int M(u) du+O(h)
+\end{aligned}
 \end{equation}
 Noting the bias result from \eqref{Expectation} and \eqref{BiasResult}, we have
 \begin{equation}\label{EM}
 \begin{aligned}
 &{\rm E}_y(M(\frac{x-y}{h})) \\
-= &h^{D+1} ( {\rm E}(\partial_{x_s} \hat{p}_h(x))\leq h^{D+1} (\partial_{x_s} p(x)+\frac{\Delta(\partial_{x_s}p(x))}{2D} h^2 \int \|u\|^2 K(u) du+o(h^2)).
+= &h^{D+1} ( {\rm E}(\partial_{x_s} \hat{p}_h(x))\\
+\leq &h^{D+1} (\partial_{x_s} p(x)+\frac{\Delta(\partial_{x_s}p(x))}{2D} h^2 \int \|u\|^2 K(u) du+o(h^2)).
 \end{aligned}
 \end{equation}
 Taking the square of \eqref{EM} on both sides, we obtain
@@ -289,35 +335,57 @@ Taking the square of \eqref{EM} on both sides, we obtain
 \]
 Taking the expectation of $M^2(\frac{x-y}{h})$, and changing the variable $u=\frac{x-y}{h}$, we obtain
 \begin{equation}\label{part1}
-{\rm E}_y(M^2(\frac{x-y}{h})) = \frac{1}{h^D} \int M^2(u) p(x-uh) du = \frac{1}{h^D}(p(x)\int M^2(u)du+O(h)).
+\begin{aligned}
+&{\rm E}_y(M^2(\frac{x-y}{h})) \\
+=& \frac{1}{h^D} \int M^2(u) p(x-uh) du \\
+= &\frac{1}{h^D}(p(x)\int M^2(u)du+O(h)).
+\end{aligned}
 \end{equation}
-Using \eqref{EM},\eqref{part1} we have
+Combining the results in \eqref{EM} and \eqref{part1}, we have the order of the variance:
 \begin{equation}\label{Var}
 \begin{aligned}
   & {\rm Var} (\partial_{x_s} \hat{p}_h(x))  \\
-=& \frac{1}{n h^{2D+2}}({\rm E}_yM^2(\frac{x-y}{h}))-{\rm E}^2_y(M(\frac{x-y}{h})) = \frac{1}{n h^{D+2}} (p(x)\int M^2(u)du +O(h)).
+=& \frac{1}{n h^{2D+2}}({\rm E}_yM^2(\frac{x-y}{h}))-{\rm E}^2_y(M(\frac{x-y}{h})) \\
+=& \frac{1}{n h^{D+2}} (p(x)\int M^2(u)du +O(h)).
 \end{aligned}
 \end{equation}
 %We noted that
 %\[
 %{\rm Var}(\partial_{x_s}p_n(x)) = {\rm E}(\partial_{x_s} p_n(x)-{\rm E}(\partial_{x_s} p_n(x)))^2
 %\]
-Because the square-root function is concave, we use Jensen's inequality to determine that
+Because the square-root function is concave, we use Jensen's inequality to show that ${\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))|$ is dominated by the square root of the variance:
 \begin{equation}\label{Jensen}
-\sqrt{{\rm Var}(\partial_{x_s}\hat{p}_h(x))} = \sqrt{{\rm E}(\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x)))^2}\geq {\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))|.
+\begin{aligned}
+ & {\rm E}|\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))|\\
+\leq &\sqrt{{\rm E}(\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x)))^2}\\
+ = & \sqrt{{\rm Var}(\partial_{x_s}\hat{p}_h(x))} .
+\end{aligned}
 \end{equation}
+%\begin{equation}\label{Jensen}
+%\begin{aligned}
+%  & \sqrt{{\rm Var}(\partial_{x_s}\hat{p}_h(x))} \\
+%=& \sqrt{{\rm E}(\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x)))^2}\\
+%\geq &{\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))|.
+%\end{aligned}
+%\end{equation}
 Combining \eqref{Var} and \eqref{Jensen} yields
 \begin{equation}\label{VarResult}
-{\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))| \leq \sqrt{\frac{p(x)\int M^2(u)du}{n h^{D+2}}}+O(\frac{1}{n^{1/2}h^{(D+1)/2}}).
+\begin{aligned}
+&{\rm E} |\partial_{x_s} \hat{p}_h(x)-{\rm E}(\partial_{x_s} \hat{p}_h(x))| \\
+\leq &\sqrt{\frac{p(x)\int M^2(u)du}{n h^{D+2}}}+O(\frac{1}{n^{1/2}h^{(D+1)/2}}).
+\end{aligned}
 \end{equation}
 %From \eqref{error2}, we have
 %\begin{equation}\label{expectationd2}
 %E_y^2(k^{''}_{rs}(\frac{x-y}{h}) =n h^{2d+4}({\{p^{(2)}_{rs}(x)\}}^2+O(h^2))
 %\end{equation}
 %Let $M(u) = \max_{r,s} (\partial_{r,s} k(u))^2$. Using \eqref{e1}\eqref{expectationd2} , we have
-Repeating the procedures \eqref{e11} - \eqref{Jensen},  we obtain
+Repeating procedures \eqref{e11}-\eqref{Jensen},  we obtain
 \begin{equation}\label{VarResult2}
-{\rm E} | \partial_{x_s}\partial_{x_t} \hat{p}_h(x) -{\rm E}(\partial_{x_s}\partial_{x_t} \hat{p}_h(x))| \leq \sqrt{\frac{p(x)\int N^2(u)du}{nh^{D+4}}}+O(\frac{1}{n^{1/2}h^{(D+3)/2}}),
+\begin{aligned}
+&{\rm E} | \partial_{x_s}\partial_{x_t} \hat{p}_h(x) -{\rm E}(\partial_{x_s}\partial_{x_t} \hat{p}_h(x))| \\
+\leq & \sqrt{\frac{p(x)\int N^2(u)du}{nh^{D+4}}}+O(\frac{1}{n^{1/2}h^{(D+3)/2}}),
+\end{aligned}
 \end{equation}
 %\[
 %|f_n^{(1)}(x) - p^{(1)}(x)|\leq \frac{C}{2} h^2 \int \|u\|^2 k(u) du +\sqrt{\frac{p(x)\int N^2(u)du}{nh^{d+2}}}
@@ -326,18 +394,17 @@ where $N(\frac{x-y}{h}) $ is defined as $N(\frac{x-y}{h}) = \partial_ {u_s}\part
 \eqref{VarResult} and \eqref{VarResult2} have different orders with respect to $h$, which could lead to an optimal-parameter dilemma, as shown in the next section.
 \end{proof}
 \subsection{Derivatives' Bias for {\it l}-SCRE}
-\begin{lemma} \label{lSCRE}For the derivatives of $\hat{p}_{r,h}(x)$, we have the bias relationship for first and second order derivatives as
+\begin{lemma} \label{lSCRE}For the derivatives of $\hat{p}_{r,h}(x)$, we have the bias relationship for the first- and second-order derivatives:
 \begin{gather*}\label{order11}
 |{\rm E}( \partial_{x_s}  \hat{p}_{r,h}(x)) -  \partial_{x_s } p(x)|  \leq B_s(x| r,h, p)  ,\\
-|{\rm E} (\partial_{x_s} \partial_{x_t}   \hat{p}_{r, h}(x)) -  \partial_{x_s} \partial_{x_t} p(x)| \leq B_{s,t}(x| r,h, p),
+|{\rm E} (\partial_{x_s} \partial_{x_t}   \hat{p}_{r, h}(x)) -  \partial_{x_s} \partial_{x_t} p(x)| \leq B_{s,t}(x| r,h, p).
 \end{gather*}
-furthermore, if  
+Furthermore, if  
 \begin{equation}\label{condition1}
 r \geq\max \{ h, \sqrt{\frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|}} , \sqrt{\frac{2|\partial_{x_s} \partial_{x_t} p(x)|}{ |\Delta(\partial_{x_s}\partial_{x_t} p(x))|}}\},
 \end{equation}
 the bound of the pairwise derivatives' bias for $\hat{p}_{r,h}(x)$ %{\it l}-SCRE 
-will be bounded by that of $\hat{p}_h(x)$%SCRE
-, in other words,
+will be bounded by that of $\hat{p}_h(x)$; in other words,
 \begin{gather*}\label{bias_bound2}
 |{\rm E}( \partial_{x_s}  \hat{p}_{r,h}(x)) -  \partial_{x_s } p(x)| \leq |{\rm E}( \partial_{x_s}  \hat{p}_{h}(x)) -  \partial_{x_s } p(x)|,\\
 |{\rm E}( \partial_{x_s} \partial_{x_t} \hat{p}_{r,h}(x)) - \partial_{x_s} \partial_{x_t} p(x)| \leq |{\rm E}( \partial_{x_s}  \partial_{x_t} \hat{p}_{h}(x)) -  \partial_{x_s }\partial_{x_t} p(x)|.
@@ -345,16 +412,21 @@ will be bounded by that of $\hat{p}_h(x)$%SCRE
 \end{lemma}
 
 \begin{proof}\label{LKDE bias}
-Recall that, in the bias for kernel density estimation, we also have the expression of expectation and the Taylor expansion:
+Recall that, in the bias for kernel-density estimation, we also have the expression of expectation and the Taylor expansion:
 \[
 \begin{aligned}
 &{\rm E} (\partial_{x_s} \hat{p}_{r,h}(x)) = \int_ {u\in \mathbb{R}^D} K_r(u) \partial_{z_s}p(z)|_{z=x-hu} d u,\\
-&\partial_{z_s} p(z)|_{z=x-hu}= \partial_{x_s} p(x) -  h u^T\nabla \partial_{x_s} p(x) + \frac{1}{2}h^2 u^T H(\partial_{x_s}p(x))(x)u + o(h^2).
+&\partial_{z_s} p(z)|_{z=x-hu}
+= \partial_{x_s} p(x) -  h u^T\nabla \partial_{x_s} p(x) + \frac{1}{2}h^2 u^T H(\partial_{x_s}p(x))(x)u + o(h^2).
 \end{aligned}
 \]
 Thus, we have
 \begin{equation}\label{biasn1}
-{\rm E} (\partial_{x_s} \hat{p}_{r,h}(x))  = \partial_{x_s} p(x) \int_ {u\in \mathbb{R}^D} K_r(u) du + \frac{\Delta(\partial_{x_s}p(x))}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du + o(h^2).
+\begin{aligned}
+&{\rm E} (\partial_{x_s} \hat{p}_{r,h}(x))  \\
+=& \partial_{x_s} p(x) \int_ {u\in \mathbb{R}^D} K_r(u) du+... \\
++& \frac{\Delta(\partial_{x_s}p(x))}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du + o(h^2).
+\end{aligned}
 \end{equation}
 Note that $\int_{u\in \mathbb{R}^D} K_r(u) du=\int_{\|u\|\leq r/h} K(u) du$ and 
 \[
@@ -364,53 +436,55 @@ Subtracting $\partial_{x_s}p(x)$ in \eqref{biasn1} from both sides, we have
 \begin{equation}\label{biasn2}
 \begin{aligned}
 &{\rm E}( \partial_{x_s} \hat{p}_{r,h}(x)) -  \partial_{x_s} p(x) \\
-= &
--\partial_{x_s} p(x) \int_{\|u\|\geq r/h} K(u) du  + \frac{\Delta(\partial_{x_s} p(x))}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du .
+= & -\partial_{x_s} p(x) \int_{\|u\|\geq r/h} K(u) du  +...\\
++& \frac{\Delta(\partial_{x_s} p(x))}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du .
 \end{aligned}
 \end{equation}
 Using the absolute value inequality, we have
 \begin{equation}\label{biasn22}
 \begin{aligned}
 &|{\rm E}( \partial_{x_s} \hat{p}_{r,h}(x)) -  \partial_{x_s} p(x)| \\
-\leq &
-|\partial_{x_s} p(x)| \int_{\|u\|\geq r/h} K(u) du  + \frac{|\Delta(\partial_{x_s} p(x))|}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du .
+\leq &|\partial_{x_s} p(x)| \int_{\|u\|\geq r/h} K(u) du  + ...\\
++&\frac{|\Delta(\partial_{x_s} p(x))|}{2D} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du.
 \end{aligned}
 \end{equation}
-Recalling that, the original term for the upper bound of bias in \eqref{BiasResult} is
+Recall that the original term for the upper bound of the bias in \eqref{BiasResult} is
 \[
-\frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int \|u\|_2^2 K(u) du,
+\frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int \|u\|_2^2 K(u) du.
 \] 
-By comparing \eqref{biasn22} with \eqref{BiasResult}, we reduce the original term for the upper bound of bias
-to the locally restrict version as
+By comparing \eqref{biasn22} with \eqref{BiasResult}, we reduce the original term for the upper bound of the bias to the locally restricted version:
 \[
-\frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du,
+\frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du.
 \] 
-except for introducing an extra term $|\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du$. 
+However, we do introduce an extra term $|\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du$. 
 Next, we compare the summation of the two terms 
 \begin{equation}\label{term1}
-|\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du+ \frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du,
+|\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du+ \frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int_{\|u\|\leq r/h } \|u\|_2^2 K(u) du
 \end{equation}
 with the single term
 \begin{equation}\label{term2}
 \frac{|\Delta(\partial_{x_s}p(x))|}{2} h^2 \int \|u\|_2^2 K(u) du.
 \end{equation}
-It can be easily observed that, to make \eqref{term1} less than \eqref{term2} , we only need to make sure the following inequality is satisfied:
+It can be easily observed that, to make \eqref{term1} less than \eqref{term2}, we only need to make sure the following inequality is satisfied:
 \begin{equation}\label{Necessary}
-\frac{|\Delta(\partial_{x_s} p(x))|}{2} h^2 \int_{\|u\|> r /h} \|u\|_2^2 K(u) du > |\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du.
+\begin{aligned}
+&\frac{|\Delta(\partial_{x_s} p(x))|}{2} h^2 \int_{\|u\|> r /h} \|u\|_2^2 K(u) du\\
+ >& |\partial_{x_s} p(x)| \int_{\|u\|> r/h} K(u) du.
+\end{aligned}
 \end{equation}
 The condition in \eqref{Necessary} is equivalent to
 \begin{equation}\label{Necessary2}
 \frac{\int_{\|u\|> r /h} \|u\|_2^2 K(u) du }{\int_{\|u\|> r/h} K(u) du} > \frac{2|\partial_{x_s} p(x)| }{h^2 |\Delta(\partial_{x_s} p(x))|}.
 \end{equation}
-Note that, when $r>h$ which implies $\|u\|>1$,  the left side of \eqref{Necessary2} has a lower bound as
+Note that, when $r>h$, this implies $\|u\|>1$, and so the left side of \eqref{Necessary2} has the following lower bound:
 \begin{equation}\label{necess2}
 \frac{ \int_{\|u\|> r /h} \|u\|_2^2 K(u) du}{ \int_{\|u\|> r/h} K(u) du}\geq r^2/h^2.
 \end{equation}
-Note that, when $r>h$, the condition
+Also, when $r>h$, the condition
 \begin{equation}\label{suff}
-r^2/h^2 > \frac{2|\partial_{x_s} p(x)| }{h^2 |\Delta(\partial_{x_s} p(x))|} ,
+r^2/h^2 > \frac{2|\partial_{x_s} p(x)| }{h^2 |\Delta(\partial_{x_s} p(x))|}
 \end{equation}
-implies \eqref{Necessary2}. \eqref{suff} indicates that if we choose a proper $r>\max\{h,\frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|}\}$, the sufficient  condition for \eqref{Necessary} will be met automaticly, which means
+implies \eqref{Necessary2}. \eqref{suff} indicates that, if we choose a proper $r>\max\{h,\frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|}\}$, the sufficient  condition for \eqref{Necessary} will be met automatically, which means
 \begin{equation}\label{end1}
 |{\rm E}( \partial_{x_s}  \hat{p}_{r,h}(x)) -  \partial_{x_s } p(x)| \leq |{\rm E}( \partial_{x_s}  \hat{p}_{r}(x)) -  \partial_{x_s } p(x)|
 \end{equation}
@@ -422,12 +496,12 @@ implies \eqref{Necessary2}. \eqref{suff} indicates that if we choose a proper $r
 %r^2 \geq\frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|},
 %\]
 
-Similarly, if we choose a proper such that $r>\max\{h,\frac{2|\partial_{x_s}\partial_{x_t} p(x)|}{ |\Delta(\partial_{x_s} \partial_{x_t}p(x))|}\}$, we will get
+Similarly, if we choose a proper $r$ such that $r>\max\{h,\frac{2|\partial_{x_s}\partial_{x_t} p(x)|}{ |\Delta(\partial_{x_s} \partial_{x_t}p(x))|}\}$, we will get
 \begin{equation}\label{end2}
 |{\rm E}( \partial_{x_s} \partial_{x_t} \hat{p}_{r,h}(x)) - \partial_{x_s} \partial_{x_t} p(x)| \leq |{\rm E}( \partial_{x_s}  \partial_{x_t} \hat{p}_{r}(x)) -  \partial_{x_s }\partial_{x_t} p(x)|
 \end{equation}
 \end{proof}
-If choosing $r$ such that $ r>\max\{h,\frac{2|\partial_{x_s}\partial_{x_t} p(x)|}{ |\Delta(\partial_{x_s} \partial_{x_t}p(x))|}, \frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|}\}\}$, we will have the conditions  in \eqref{end1} and \eqref{end2} satisfied, simultaneously.
+If we choose $r$ such that $ r>\max\{h,\frac{2|\partial_{x_s}\partial_{x_t} p(x)|}{ |\Delta(\partial_{x_s} \partial_{x_t}p(x))|}, \frac{2|\partial_{x_s} p(x)|}{ |\Delta(\partial_{x_s} p(x))|}\}\}$, the conditions in \eqref{end1} and \eqref{end2} will be satisfied, simultaneously.
 %\subsection{Simplified Bias Result}
 %\begin{proof}\label{Simplified Bias Result}
 %From comparison \eqref{BiasResult} and \eqref{order11}, we know that if 
@@ -440,43 +514,73 @@ If choosing $r$ such that $ r>\max\{h,\frac{2|\partial_{x_s}\partial_{x_t} p(x)|
 %the bound for bias with respect to $\partial_{x_s} p_{r, h}(x), \partial_{x_s} \partial_{x_t} p_{r, h}(x)$ will be reduced through replacement of the {\it l}-SCRE with the SCRE in \eqref{GKDE}.
 %\end{proof}
 \subsection{Derivatives' Variance for {\it l}-SCRE}
-\begin{theorem}{The variance of derivative of $\hat{p}_{r,h}(x)$ is controlled by}
+\begin{theorem}{The variance of the derivative of $\hat{p}_{r,h}(x)$ is controlled by}
 \[
 {{\rm Var}}(\partial_{x_s} \hat{p}_{r,h}(x)) \leq \frac{1}{n h^{D+2}}  (p(x) \int (\partial_{ u_s } K (u) )^2   du + O(h)).
 \]
 \end{theorem}
 
 \begin{proof}\label{Derivatives' Variance for LKDE}
-Because of ${{\rm Var}}(u) = {\rm E}(u - {\rm E}u)^2 = {\rm E}(u^2) - ({\rm E}(u))^2$, by neglecting the low order  term $({\rm E}(u))^2$,  we have
+Because ${{\rm Var}}(u) = {\rm E}(u - {\rm E}u)^2 = {\rm E}(u^2) - ({\rm E}(u))^2$, by neglecting the low-order term $({\rm E}(u))^2$,  we have
 \begin{equation}\label{step1}
 {{\rm Var}}(\partial_{x_s} \hat{p}_{r,h}(x)) \leq {\rm E} ((\partial_{x_s} \hat{p}_{r,h}(x))^2) .
 \end{equation}
-Also noting that $\hat{p}_{r,h}(x)=\frac{1}{n h^D} \sum_k K_r(\frac{x-x_k}{h})$ and taking the expectation with respect to the random variable $x_k$, we have
+Also, noting that $\hat{p}_{r,h}(x)=\frac{1}{n h^D} \sum_k K_r(\frac{x-x_k}{h})$ and taking the expectation with respect to the random variable $x_k$, we have
 \begin{equation}\label{step2}
  {\rm E} ((\partial_{x_s} \hat{p}_{r,h}(x))^2) = \frac{1}{n h^{2D}} {\rm E}_y ((\partial_{x_s } K_r (\frac{x - y}{h}))^2).
 \end{equation}
-Using $|\frac{\partial}{\partial x_s} K_r(\frac{x-x_i}{h}) | \leq |\frac{\partial}{\partial x_s} K(\frac{x-x_i}{h})|, \forall \|x-x_i\|\leq r$, we have
+For the $x$ that satisfies $\|x-x_i\|_2\leq r$, we have 
+\[
+K_r(\frac{x-x_i}{h}) = K(\frac{x-x_i}{h}),
+\]
+which implies 
+\[
+|\frac{\partial }{\partial x_s }K_r(\frac{x-x_i}{h})| = | \frac{\partial }{\partial x_s }K(\frac{x-x_i}{h} )|.
+\]
+Otherwise, for the $x$ that satisfies $\|x-x_i\|_2> r$, we have
+\[
+K_r(\frac{x-x_i}{h}) =0,
+\]
+which implies
+\[
+|\frac{\partial }{\partial x_s }K_r(\frac{x-x_i}{h})| = 0.
+\]
+Thus, when $\|x-x_i\|\neq r$, we always have the following inequality satisfied:
+\begin{equation}\label{dominate}
+|\frac{\partial}{\partial x_s} K_r(\frac{x-x_i}{h}) | \leq |\frac{\partial}{\partial x_s} K(\frac{x-x_i}{h})|.
+\end{equation}
+Using \eqref{dominate}, %$|\frac{\partial}{\partial x_s} K_r(\frac{x-x_i}{h}) | \leq |\frac{\partial}{\partial x_s} K(\frac{x-x_i}{h})|$, %\forall \|x-x_i\|\leq r$, 
+we have
 \begin{equation}\label{step3}
 \frac{1}{n h^{2D}} {\rm E}_y ((\partial_{x_s } K_r (\frac{x - y}{h}))^2) \leq \frac{1}{n h^{2D}} {\rm E}_y ((\partial_{x_s } K(\frac{x - y}{h}))^2).
 \end{equation}
 Because of the chain rule of derivatives, we have
 \begin{equation}\label{step4}
-\frac{1}{n h^{2D}} {\rm E}_y ((\partial_{x_s} K(\frac{x - y}{h}))^2) = \frac{1}{n h^{2D+2}} \int (\partial_{u_s } K (u) |_{u=\frac{x - y}{h}})^2 p(y) dy.
+\begin{aligned}
+&\frac{1}{n h^{2D}} {\rm E}_y ((\partial_{x_s} K(\frac{x - y}{h}))^2) \\
+= &\frac{1}{n h^{2D+2}} \int (\partial_{u_s } K (u) |_{u=\frac{x - y}{h}})^2 p(y) dy.
+\end{aligned}
 \end{equation}
 Using the rule for changing the integrating variable from $y$ to $u$, we have 
 \begin{equation}\label{step5}
-\frac{1}{n h^{2D+2}} \int (\partial_{u_s } K (u) |_{u=\frac{x - y}{h}})^2 p(y) dy = \frac{1}{n h^{D+2}} \int (\partial_{u_s } K (u) )^2 p(x-uh) du.
+\begin{aligned}
+&\frac{1}{n h^{2D+2}} \int (\partial_{u_s } K (u) |_{u=\frac{x - y}{h}})^2 p(y) dy \\
+= &\frac{1}{n h^{D+2}} \int (\partial_{u_s } K (u) )^2 p(x-uh) du.
+\end{aligned}
 \end{equation}\label{step6}
 In the same way as before, by Taylor expansion $p(x-uh)=p(x)+O(h)$, we have
 \begin{equation}\label{step7}
-\frac{1}{n h^{D+2}} \int (\partial_{u_s } K (u) )^2 p(x-uh) du = \frac{1}{n h^{D+2}}  (p(x) \int (\partial_{u_s } K (u) )^2   du + O(h)).
+\begin{aligned}
+&\frac{1}{n h^{D+2}} \int (\partial_{u_s } K (u) )^2 p(x-uh) du\\
+ = &\frac{1}{n h^{D+2}}  (p(x) \int (\partial_{u_s } K (u) )^2   du + O(h)).
+\end{aligned}
 \end{equation}
 Combining the inequalities in \eqref{step1}-\eqref{step7}, we can obtain the result.
 \end{proof}
 
 \subsection{Minimum Relation}
 \begin{lemma}\label{improve_lemma}
-For two functions $\nu(h) = a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ and $\nu_\ell (h) = \ell a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ with $m=2,4,\ell \in(0,1)$. Then, the optimal minimums of them have a relationship:  $\min_h \nu_\ell (h) = \ell^{\frac{D+2}{D+6}}\min_h \nu(h)$
+We have two functions $\nu(h) = a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ and $\nu_\ell (h) = \ell a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ with $m=2,4,\ell \in(0,1)$. Then, their optimal minimums have the following relationship: $\min_h \nu_\ell (h) = \ell^{\frac{D+2}{D+6}}\min_h \nu(h)$
 \end{lemma} 
 
 \begin{proof}\label{mimimum_proof}
@@ -486,15 +590,15 @@ For a function $\nu(h) = a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}, m=2,4$, the gl
 \[
 \nu(h^*) = 2(\frac{a_1^2 a_0^{\frac{D+m}{2}}}{n})^{\frac{2}{D+m+4}}=2 a_0^{\frac{D+m}{D+m+4}} a_1^{\frac{1}{D+m+4}} {n}^{-\frac{2}{D+m+4}}.
 \]
-Consider another function by replacing $a_0$ in $\nu(h)$ with $\ell a_0$, where $\ell \in(0,1)$
+Consider another function obtained by replacing $a_0$ in $\nu(h)$ with $\ell a_0$, where $\ell \in(0,1)$:
 \begin{equation}\label{f_mu}
 \nu_\ell (h) = \ell a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}.
 \end{equation}
-The modified function $\nu_\ell(h)$ will lead to a new minimum optimum point as
+The modified function $\nu_\ell(h)$ will lead to a new minimum optimum point:
 \[
 h^{**} =\arg\min \nu_\ell( h)=(\frac{a_1^2}{n \ell^2 a_0^2})^{\frac{1}{D+m+4}}.
 \] 
-Substituting it into \eqref{f_mu}, by a simple calculation, we obtain $\nu_\ell (h^{**}) = \ell^{\frac{D+m}{D+m+4}}\nu(h^*)$.
+Substituting this into \eqref{f_mu}, by a simple calculation, we obtain $\nu_\ell (h^{**}) = \ell^{\frac{D+m}{D+m+4}}\nu(h^*)$.
 Since $\frac{D+4}{D+8}>\frac{D+2}{D+6}$ and $\ell^x$ is a decreasing function for $\ell \in (0,1)$, we have $\max\{\ell^{\frac{D+4}{D+8}}, \ell^{\frac{D+2}{D+6}}\} = \ell^{\frac{D+2}{D+6}}$. 
 \end{proof}
 \subsection{Confidence Region}
@@ -505,8 +609,8 @@ P({\cal M}\subset \hat{C}_{r,h}(a_n(\alpha), b_n(\alpha)) ) \geq 1-\alpha.
 \]
 \end{theorem}
 \begin{proof}\label{confidence_region}
-Since the estimation of eigenvectors of the Hessian has a slower rate of convergence than the estimation of gradient,
-we can approximate $V^T({\hat{H}}(x))\hat{g}(x) -V^T(H(x))g(x)$ by a linear combination of $\hat{H}(x)$ and $H(x)$ as:
+Since the estimation of eigenvectors of the Hessian has a slower rate of convergence than the estimation of the gradient,
+we can approximate $V^T({\hat{H}}(x))\hat{g}(x) -V^T(H(x))g(x)$ by a linear combination of $\hat{H}(x)$ and $H(x)$:
 \[
 \sup_{x\in \cal M} \|V^T_{\hat{H}}(x)\hat{g}(x) -V^T_H(x)g(x)-M {\rm vech}(\hat{H}(x)-H(x))\hat{g}(x)\| = O_p(\sqrt{\frac{\log n}{nh^{D+4}}}).
 \]
@@ -514,7 +618,7 @@ Thus, we only need to ensure, with high probability,
 \begin{equation}\label{approx}
 \sup_{x\in\cal M}\|\hat{Q}(x)M {\rm vech}(\hat{H}(x)- H(x))\hat{g}(x)\|\leq a_n.
 \end{equation}
-By bringing a parameter $z$ in the $D-d-1$ dimensional sphere ($\|z\|=1$), the norm in \eqref{approx} equals to 
+By bringing a parameter $z$ in the $D-d-1$ dimensional sphere ($\|z\|=1$), we make the norm in \eqref{approx} equal to 
 \begin{equation}\label{supm}
 \sup_{x\in{\cal M}, z\in {\mathbb S}^{D-d-1}} z^T\hat{Q}(x)M {\rm vech}(\hat{H}(x)- H(x))\hat{g}(x) \leq a_n.
 \end{equation}
@@ -523,15 +627,15 @@ A sufficient condition for \eqref{supm} is
 \sup_{x\in{\cal M}, z\in {\mathbb S}^{D-d-1}} z^T\hat{Q}(x)M {\rm vech}(\hat{H}(x)- {\rm E}(\hat{H}(x)))\hat{g}(x)+...\\
 +\sup_{x\in{\cal M}, z\in {\mathbb S}^{D-d-1}} z^T\hat{Q}(x)M {\rm vech}({\rm E}(\hat{H}(x)) - H(x))\hat{g}(x) \leq a_n.
 \end{multline}
-The second term is deterministic. Next, we show the limit distribution for the first term of \eqref{supm2} is normal. Let 
+The second term is deterministic. Next, we show that the limit distribution for the first term of \eqref{supm2} is normal. Let 
 \[
 g_{x,z}(X) = \frac{1}{\sqrt{h^D}} z^T\hat{Q}(x)M {\rm vech}( \nabla\nabla K_h(X-x))\nabla K_h(X-x).
 \]
-Define an  empirical process $\{{\mathbb G}_n(g_{x,z}), x\in {\cal M}, z\in {\mathbb S}^{D-d-1}\}$ as
+Define an empirical process $\{{\mathbb G}_n(g_{x,z}), x\in {\cal M}, z\in {\mathbb S}^{D-d-1}\}$ as
 \[
 {\mathbb G}_n(g_{x,z}) = \frac{1}{\sqrt{n}} \sum_{i=1}^n (g_{x,z}(X_i)-{\rm E}g_{x,z}(X_1)).
 \]
-By the central limit theorem, the limit distribution of $\sup_{x\in {\cal M},{z \in {\mathbb S}^{D-d-1}}}{\mathbb G}_n(g_{x,z})$ is the normal distribution $N(0,\sigma)$ with $n$ approaching infinity, i.e.,  
+According to the central limit theorem, the limit distribution of $\sup_{x\in {\cal M},{z \in {\mathbb S}^{D-d-1}}}{\mathbb G}_n(g_{x,z})$ is the normal distribution $N(0,\sigma)$ with $n$ approaching infinity, i.e.,  
 \[
 \sup_{x\in {\cal M},{z \in {\mathbb S}^{D-d-1}}}{\mathbb G}_n(g_{x,z}) \rightarrow N(0,\sigma),
 \]
@@ -540,19 +644,20 @@ Thus,  we can choose
 \[
 a_n = \sigma\sqrt{2}{\rm erf}^{-1}(1-2\alpha) + \sup_{x\in{\cal M}, z\in {\mathbb S}^{D-d-1}} z^T\hat{Q}(x)M {\rm vech}({\rm E}(\hat{H}(x)) - H(x)) 
 \]
-such that the condition in \eqref{supm} satisfied with the probability at least $1-\alpha$.
+such that the condition in \eqref{supm} is satisfied with a probability of at least $1-\alpha$.
 \end{proof}
 
 \section{}
-\subsection{Eigenspace Differences betweeen $C_r(x)$ and $J_r(x)$}
+\subsection{Eigenspace Differences between $C_r(x)$ and $J_r(x)$}
 \begin{theorem}
-If $\|c_r(x)-x\|_2^2< \lambda_d(C_r(x)))$, the eigenspaces corresponding to the top $d$ eigenvalues of $C_r(x)$ and $J_r(x)$ coincide, i.e., the distance \footnote{
-The distance between two subspace ${\cal V}$ and ${\cal U} $ is defined as the operator norm of the error of two projection matrices, i.e., $D({\cal V},{\cal U}) = \|P_{\cal V}-P_{\cal U}\|_2$
-}
+If $\|c_r(x)-x\|_2^2< \lambda_d(C_r(x)))$, the eigenspaces corresponding to the top $d$ eigenvalues of $C_r(x)$ and $J_r(x)$ coincide, i.e., the distance 
+%\footnote{
+%The distance between two subspace ${\cal V}$ and ${\cal U} $ is defined as the operator norm of the error of two projection matrices, i.e., $D({\cal V},{\cal U}) = \|P_{\cal V}-P_{\cal U}\|_2$
+%}
 \[
-D({\cal V}_d (C_r(x)), {\cal V}_d (J_r(x)))=0,
+D({\cal V}_d (C_r(x)), {\cal V}_d (J_r(x)))=0.
 \]
-Otherwise, if $\|c_r(x)-x\|_2^2\geq \lambda_d(C_r(x)))$, then 
+Otherwise, if $\|c_r(x)-x\|_2^2\geq \lambda_d(C_r(x)))$, 
 $
 D({\cal V}_d (C_r(x)),{\cal V}_d (J_r(x)))=1.
 $
@@ -560,20 +665,23 @@ $
 \begin{proof}
 %To simplify the analysis, we assume the orthogonality of $c_r(x)-x$ and the space spanned by the top $d$ eigenspace of $\sum_i w_h(x, x_i) (x_i-c_r(x)) (x_i-c_r(x))^T$.
 
-If we denote the eigenvalue decomposition of $C_r(x)$ as 
+If the eigenvalue decomposition of $C_r(x)$ is denoted by 
 \[
 C_r(x) = [ V_d, V_{D-d}] \Lambda [ V_d, V_{D-d}]^T,
 \]
-the principal space is spanned by the vectors consisting each of the columns of $V_d$. Here, $V_d$ relys on $x$ through $c_r(x)$, as a result, we denote $V_d$ as $V_d(c_r(x))$. Similarly, we have the space which is orthogonal to the principal space, which we denote as $V_{D-d}(c_r(x))$.
+the principal space is spanned by the vectors consisting of the columns of $V_d$. Here, $V_d$ relies on $x$ through $c_r(x)$, and as a result we let $V_d$ be expressed by $V_d(c_r(x))$. Similarly, we have the space that is orthogonal to the principal space, denoted by $V_{D-d}(c_r(x))$.
 
-Based on the assumption, we can represent $c_r(x)-x$ and $\{x_i-c_r(x), i=1:n\}$ by the coordinates in their corresponding space as:
+Based on the assumption, we can let $c_r(x)-x$ and $\{x_i-c_r(x), i=1:n\}$ be represented by the coordinates in their corresponding space:
 \begin{equation} \label{tangent2}
-c_r(x) - x =  V_{D-d}(c_r(x)) \alpha(x); \quad x_i-c_r(x) = V_d(c_r(x))\alpha(x, x_i).
+\begin{aligned}
+&c_r(x) - x =  V_{D-d}(c_r(x)) \alpha(x); \\
+&x_i-c_r(x) = V_d(c_r(x))\alpha(x, x_i).
+\end{aligned}
 \end{equation}
 Substitute \eqref{tangent2} into $J_r(x)$ and let
 \begin{align*}
 &A(x)= V_{D-d}(c_r(x)) \alpha(x) \alpha(x)^T V_{D-d}(c_r(x))^T,\\
-&B(x)=\sum_i w(x, x_i) V_d(c_r(x)) \alpha(x, x_i)\alpha(x, x_i)^T V_d(c_r(x))^T ;
+&B(x)=\sum_i w(x, x_i) V_d(c_r(x)) \alpha(x, x_i)\alpha(x, x_i)^T V_d(c_r(x))^T.
 \end{align*}
 We have
 \[
@@ -581,17 +689,19 @@ J_r(x) =A(x) + B(x).
 \]
 In this case, we know ${\rm rank}(A(x))=1, {\rm rank} (B(x))=d$. For the rank-one matrix, we can get the eigenvalue  $\lambda(A(x))$ by normalizing $A(x)$. Note that
 \[
-A(x) = V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|}  \|\alpha(x)\|_2^2 \frac{\alpha^T(x)}{\|\alpha(x)\|}  V^T_{D-d}(c_r(x))
+A(x) = V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|}  \|\alpha(x)\|_2^2 \frac{\alpha^T(x)}{\|\alpha(x)\|}  V^T_{D-d}(c_r(x)).
 \]
-Thus, the eigenvalue of $A(x)$ is $\|c_r(x)-x\|_2^2$ and $V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|}$ is a unitary vector in the space of $V_{D-d}(c_r(x))$. For simplicity, we denote 
+Thus, the eigenvalue of $A(x)$ is $\|c_r(x)-x\|_2^2$, and $V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|}$ is a unitary vector in the space of $V_{D-d}(c_r(x))$. For simplicity, we let
 \[
-v(x) = V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|},\quad
-\Xi (x) = \sum_i w(x, x_i) \alpha(x, x_i)\alpha(x, x_i)^T,
+\begin{aligned}
+&v(x) = V_{D-d}(c_r(x))\frac{\alpha(x)}{\|\alpha(x)\|},\\
+&\Xi (x) = \sum_i w(x, x_i) \alpha(x, x_i)\alpha(x, x_i)^T,
+\end{aligned}
 \]
-which will be used in our following discussion.
-Similarly, the matrix $B(x)$ shares the same eigenvalues  with $\Xi (x)$, because the unitary transformation keep the singular values unchanged. 
+which will be used in the following discussion.
+Similarly, the matrix $B(x)$ shares the same eigenvalues  with $\Xi (x)$, because the unitary transformation keeps the singular values unchanged. 
 %Let $A(x) =\sigma(A(x)) v(x)v(x)^T$, and 
-Denote the eigenvalue decomposition of $\Xi (x)$ as  $\Xi(x) = \Theta(x) \Lambda(x) \Theta(x)^T$. Then, we have
+Let the eigenvalue decomposition of $\Xi (x)$ be denoted by $\Xi(x) = \Theta(x) \Lambda(x) \Theta(x)^T$. Then, we have
 \[
 B(x) = V_d(c(x))\Theta(x) \Lambda(x)\Theta(x)^T V_d(c(x)).
 \]
@@ -606,13 +716,13 @@ Depending on the relation between the eigenvalue of $\lambda(A(x))$ and the eige
 %\hspace{-4mm}\includegraphics[width=0.32\linewidth]{../figures/demo3.eps} 
 \includegraphics[width=\linewidth]{demo123.eps} 
 %\setcaptionwidth{6in}
-\caption{The process of $J(x)$'s eigenspace's variation with $x$ approaching the manifold }
+\caption{The process of the variation of $J_r(x)$'s eigenspace, with $x$ approaching the manifold}
 \label{Shifting Eigenvectors}
 \end{figure}
 
 \subsubsection*{Case \romannumeral1: $\lambda(A(x))>\lambda_{\max} (\Xi(x))$}
 
-This case corresponds to the leftmost diagram in {Figure \ref{Shifting Eigenvectors}}, where $x$ is far away from the data points. The covariance matrix $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$ will have large eigenvalues in the subspace of $V_{D-d}(C_r(x))$. Then, the eigenvector $V_{D-d}(C_r(x))\alpha(x)$ is the principal eigenvector, and we can distinguish it from the top eigenvector through eigenvalue decomposition.
+This case corresponds to the left diagram in {Figure \ref{Shifting Eigenvectors}}, where $x$ is far away from the data points. The covariance matrix $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$ will have large eigenvalues in the subspace of $V_{D-d}(C_r(x))$. Then, the eigenvector $V_{D-d}(C_r(x))\alpha(x)$ is the principal eigenvector, and we can distinguish it from the top eigenvector through eigenvalue decomposition.
 Then, the eigen-decomposition of $J_r(x)$ is
 \begin{equation}\label{SVD1}
 J_r (x)= [v(x), \Upsilon(x)] 
@@ -623,7 +733,7 @@ J_r (x)= [v(x), \Upsilon(x)]
 \end{array}
 \right][v(x), \Upsilon(x)]^T.
 \end{equation}
-From \eqref{SVD1}, we can recover the space spanned by $V_{D-d}(c_r(x))\alpha(x)$ by choosing the eigenvectors corresponding to the largest eigenvector. The space corresponding to $V_d(c_r(x))$ can be recovered by choosing the 2nd to $(d+1)$-th eigenvectors of $J_r(x)$.
+From \eqref{SVD1}, we can recover the space spanned by $V_{D-d}(c_r(x))\alpha(x)$ by choosing the eigenvectors corresponding to the largest eigenvector. The space corresponding to $V_d(c_r(x))$ can be recovered by choosing the $2^{\mbox{nd}}$ to $(d+1)$-th eigenvectors of $J_r(x)$.
 
 \subsubsection*{Case \romannumeral2: $\lambda_{\min} (\Xi(x)) \leq \lambda(A(x))\leq \lambda_{\max} (\Xi(x))$}
 
@@ -640,7 +750,7 @@ J_r (x)= [\Upsilon_1(x), v(x), \Upsilon_2(x)]
 \end{equation}
 where each diagonal element of $\Lambda_1(x)$ is greater than $\lambda(A(x))$, and each diagonal element of $\Lambda_2(x)$ is less than $\lambda(A(x))$.
 
-For {\it Case {\romannumeral1}} and {\it Case \romannumeral2},  the d-dimensional projection $P(J_r(x))$ corresponding to the eigenspaces of $J_r(x)$ is different with that of $C_r(x)$. The error of the two projections is
+For {\it Case {\romannumeral1}} and {\it Case \romannumeral2},  the $d$-dimensional projection $P(J_r(x))$ corresponding to the eigenspaces of $J_r(x)$ is different from that of $C_r(x)$. The error of the two projections is
 \[
 P(J_r(x)) - P(C_r(x)) = v v^T - u_du_d^T,
 \]
@@ -651,7 +761,7 @@ where $u_d$ is the eigenvector corresponding to the $d$-th largest eigenvalue of
 
 \subsubsection*{Case \romannumeral3: $\lambda(A(x))<\lambda_{\min} (\Xi(x))$ }
 
-This case corresponds to the rightmost diagram in {Figure \ref{Shifting Eigenvectors}}, where $x$ is in a small range of distance from the data points. The covariance matrix $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$ will have large eigenvalues corresponding to the eigenvectors parallel with the tangent space at $c_r(x)$. Then, the variance along $V_{D-d}(x)\alpha(x)$ will become relatively small, causing the eigen-decomposition form of $J(x)$ to yield the following form:
+This case corresponds to the right diagram in {Figure \ref{Shifting Eigenvectors}}, where $x$ is in a small range of distance from the data points. The covariance matrix $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$ will have large eigenvalues corresponding to the eigenvectors parallel with the tangent space at $c_r(x)$. Then, the variance along $V_{D-d}(x)\alpha(x)$ will become relatively small, causing the eigen-decomposition form of $J(x)$ to yield the following form:
 \begin{equation}\label{SVD3}
 J_r (x)= [\Upsilon(x),v(x)] 
 \left[
@@ -661,13 +771,13 @@ J_r (x)= [\Upsilon(x),v(x)]
 \end{array}
 \right][\Upsilon(x), v(x)]^T.
 \end{equation}
-In this case, to recover $V_d(C_r(x))$, we can simply choose the eigenvectors corresponding to the top $d$ eigenvalues of $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$. As a result, we can replace $C_r(x)$ by $J_r(x)$ to compute the space $V_d(C_r(x))$.
+In this case, to recover $V_d(C_r(x))$, we can simply choose the eigenvectors corresponding to the top $d$ eigenvalues of $\sum_i w_h(x_i, x)(x_i-x)(x_i-x)^T$. As a result, we can replace $C_r(x)$ with $J_r(x)$ to compute the space $V_d(C_r(x))$.
 
-For {\it Case {\romannumeral3}},  the d-dimensional projection $P(J_r(x))$ corresponding to the eigenspaces of $J_r(x)$ is the same with that of $C_r(x)$. Thus, the error of the two projections is
+For {\it Case {\romannumeral3}},  the $d$-dimensional projection $P(J_r(x))$ corresponding to the eigenspaces of $J_r(x)$ is the same as that of $C_r(x)$. Thus, the error of the two projections is
 \[
 P(J_r(x)) - P(C_r(x)) = 0,
 \]
-and the operator norm $\|P(J_r(x)) - P(C_r(x))\|_2=0$.
+and the operator norm is $\|P(J_r(x)) - P(C_r(x))\|_2=0$.
 %\begin{remark}
 
 %Based on the analysis, we know that we cannot simply use the eigenspace of $J_r(x)$ instead of $C_r(x)$ in any occasion. Below, we will show how the existing difference in the behaviors of eigenspace influence our ridges, respectively.
@@ -675,72 +785,161 @@ and the operator norm $\|P(J_r(x)) - P(C_r(x))\|_2=0$.
 \end{proof}
 
 \section{}
-\subsection{Rank-one Modification Enlarges Projection}
-\begin{lemma}{ For any symmetric matrix $B$, let $A = B +\lambda uu^T, \forall \lambda\geq 0$. We then have $\|\Pi_A u\|_2\geq \|\Pi_B u\|_2$, where $\Pi_A, \Pi_B$ are the projections onto the space spanned by the $d$ top principal eigenvectors of $A$ and $B$, respectively.} \label{projection_enlarge}
+\subsection{Rank-One Modification Enlarges Projection}
+\begin{lemma}
+{For any symmetric matrix $B$, let $A = B +\lambda uu^T, \forall \lambda\geq 0$. We  have $\|\Pi_A u\|_2\geq \|\Pi_B u\|_2$, where $\Pi_A$ and $\Pi_B$ are the projections onto the space spanned by the eigenvectors corresponding to the $d$ largest eigenvalues of $A$ and $B$, respectively.}
+\label{projection_enlarge}
 \end{lemma}
 
-\begin{proof}\label{Rank-one Enlarge Projection}
+
+\begin{proof}\label{Rank-One Enlarge Projection}
 Because of the variational inequality of eigenvectors, the top $d$ eigenvectors can be written as the solution of the maximum optimal problem
  \[
-U_A = \arg\max_{U^TU = I_d} {\rm trace} (U^T A U), \quad U_B = \arg\max_{U^TU = I_d} {\rm trace} (U^T B U).
+ \begin{aligned}
+U_A = \arg\max_{U^TU = I_d} {\rm trace} (U^T A U),\\
+U_B = \arg\max_{U^TU = I_d} {\rm trace} (U^T B U).
+\end{aligned}
 \]
-Denote $\Pi_A = U_A {U_A}^T,  \Pi_B = U_B {U_B}^T$. Using variational results about eigenvalues on $A$ and $B$, we have 
+Let $\Pi_A = U_A {U_A}^T,  \Pi_B = U_B {U_B}^T$. For any $Z$ and $W$ with the same shape, the trace and inner product are equal according to the following equation: 
+\[
+{\rm trace} (Z^TW) = \langle Z, W\rangle,
+\]
+where the inner product of two matrices with the same shape is defined as
+$
+\langle Z,W \rangle = \sum_{ij} Z_{ij} W_{ij}.
+$
+Therefore, we have:
+\[
+{\rm trace} (U_A^T A U_A) = {\rm trace} (U_A U_A^T A ) =\langle U_AU_A^T, A\rangle = \langle  \Pi_A, A\rangle.
+\]
+Similarly, 
+\[
+{\rm trace} (U_B^T B U_B) = {\rm trace} (U_B U_B^T B ) =\langle U_BU_B^T, B\rangle = \langle  \Pi_B, B\rangle.
+\]
+Using variational results for the eigenvalues on $A$ and $B$, we have 
 \begin{equation}\label{variantional}
 \langle \Pi_B , B \rangle \geq \langle \Pi_A , B \rangle,  \quad \langle \Pi_A , A \rangle \geq \langle \Pi_B , A \rangle.
 \end{equation}
-For the definition of the inner product $\langle \cdot, \cdot \rangle$ of two matrices with the same shape, please refer to the footnote.\footnote{ The inner product of two matrices with the same shape is defined as:
-$
-\langle M,N \rangle = \sum_{ij} M_{ij} N_{ij}.
-$}
-Because of $\langle \Pi_B , B \rangle \geq \langle \Pi_A , B \rangle$, we have
+For the definition of the inner product $\langle \cdot, \cdot \rangle$ of two matrices with the same shape, please refer to the footnote. Because $\langle \Pi_B , B \rangle \geq \langle \Pi_A , B \rangle$, we have
 \begin{equation}\label{temp2}
 \langle \Pi_B, B\rangle+ \langle \Pi_A, \lambda uu^T\rangle \leq \langle \Pi_A, B+\lambda uu^T \rangle.
 \end{equation}
-Recalling the definition of $A$, the right side of \eqref{temp2} equals to
+Recalling the definition of $A$, the right side of \eqref{temp2} equals
 \begin{equation}\label{temp3}
 \langle \Pi_A, B+\lambda uu^T \rangle = \langle \Pi_A , A \rangle.
 \end{equation}
-Using variational results about eigenvalues on $A$, we have:
+Using variational results for the eigenvalues of $A$, we have:
 \begin{equation}\label{temp4}
 \langle \Pi_A , A \rangle \geq  \langle \Pi_B, B+\lambda uu^T \rangle=\langle \Pi_B, B\rangle + \langle \Pi_B, \lambda uu^T \rangle.
 \end{equation}
-Combining \eqref{temp2}, \eqref{temp3}, \eqref{temp4} and
+Combining \eqref{temp2}, \eqref{temp3}, and \eqref{temp4} and
 %\[
 %\begin{aligned}
 %&\langle \Pi_B, B\rangle+ \langle \Pi_A, \lambda uu^T\rangle\\
 % \geq &\langle \Pi_A, B+\lambda uu^T \rangle = \langle \Pi_A , A \rangle   \geq  \langle \Pi_B, B+\lambda uu^T \rangle =  \langle \Pi_B, B\rangle + \langle \Pi_B, \lambda uu^T \rangle.
 %\end{aligned}
 %\]
-eliminating the constant $\langle \Pi_B, B\rangle$, we have $\langle  \Pi_A , uu^T\rangle \geq  \langle  \Pi_B,  uu^T\rangle$. Since 
-\[
+eliminating the term $\langle \Pi_B, B\rangle$, we have
+\begin{equation}\label{step1}
+\langle  \Pi_A , uu^T\rangle \geq  \langle  \Pi_B,  uu^T\rangle.
+\end{equation}
+Because
+\begin{equation}\label{step2}
 \langle \Pi_A, uu^T \rangle= u^T \Pi_A u = u^T \Pi_A \Pi_A u = \|\Pi_A u\|_2^2,
-\] 
-As a consequence, we have $\|\Pi_A u\|_2\geq \|\Pi_B u\|_2$.
+\end{equation}
+using \eqref{step1} and \eqref{step2}, we will obtain $\|\Pi_A u\|_2\geq \|\Pi_B u\|_2$.
 \end{proof}
+\subsection{Rank-One Modification on Subspace}
+\begin{lemma}\label{eigvenvalue}
+For any symmetric matrix $B$, let $A = B+\lambda u u^T$,  $\forall \lambda \geq 0$ and any nonzero vector $u\in  {\rm span}\{ u_1(B(x)), u_2(B(x)),..., u_d(B(x))\}$; the $(d+1)$-th  to $D$-th largest eigenvalues of $A$ and $B$ yield
+\[
+\lambda_{d+k}(A) = \lambda_{d+k}(B),\quad k=1,...,D-d
+\]
+%where ${\cal S}_d = {\rm span}\{ u_1(B(x)), u_2(B(x)),..., u_d(B(x))\}$
+where $u_k(B(x))$ and $\lambda_k(B(x))$ are the eigenvector and eigenvalue corresponding to the $k$-th largest eigenvalues of $B(x)$.
+\end{lemma}
+\begin{proof}
+We use $\Lambda^{(1)}$ and $\Lambda^{(2)}$ to stand for the $d\times d$ and $(n-d)\times(n-d)$ diagonal matrix corresponding to the eigenvalue decomposition of $B$. Let the eigenvalue decomposition of $B$ be denoted by
+\[
+B = [U_d, U_{n-d}] 
+\left[
+\begin{array}{cc}
+\Lambda^{(1)} &\\
+ &\Lambda^{(2)}
+\end{array}
+\right]
+[U_d, U_{n-d}]^T.
+\]
+Since $u\in {\cal S}_d$, we can write $u$ by combining the columns of $U_d$, as $u = U_d\alpha$. Then,
+\[
+B+\lambda u u^T = [U_d, U_{n-d}] 
+\left[
+\begin{array}{cc}
+\Lambda^{(1)} &\\
+  &\Lambda^{(2)}
+\end{array}
+\right]
+[U_d, U_{n-d}]^T+ \lambda U_d \alpha \alpha^T U_d^T.
+\]
+Let the eigenvalue decomposition be denoted by
+\[
+U_d\Lambda^{(1)} U_d^T+\lambda U_d \alpha \alpha^T U_d^T = \hat{U}_d {\Lambda} \hat{U}_d^T,
+\]
+where the diagonal elements in $\Lambda, \Lambda^{(1)}$ are placed in decreasing order. Using Weyl's theorem for eigenvalues \cite{horn2012matrix}, we know 
+\[
+{\Lambda}_{ii}\geq {\Lambda}_{ii}^{(1)}, \quad i=1,..., d.
+\] 
+and
+\[
+{\Lambda}_{ii}\geq {\Lambda}_{ii}^{(1)}\geq {\Lambda}_{jj}^{(2)},  \forall, i=1,..., d, \forall, j= 1,...,D-d.
+\] 
+Thus, the eigenvalue decomposition of $A$ is
+\[
+A = [\hat{U}_d, U_{n-d}] 
+\left[
+\begin{array}{cc}
+\Lambda & \\
+ & \Lambda^{(2)}
+\end{array}
+\right]
+[\hat{U}_d, U_{n-d}]^T.
+\]
+Note that, because the columns of $U_d$ and $\hat{U}_d$ span the same subspace and the columns of $U_d$ are orthogonal with the columns of $U_{n-d}$, we know that the columns of $\hat{U}_d$ are also orthogonal with the columns of $U_{n-d}$.
+
+Because of the uniqueness of the eigenvalue decomposition, we have proved that 
+\[
+\lambda_{d+1}(A) = \lambda_{d+1}(B) = \Lambda^{(2)}_{1 1}.
+\]
+Furthermore, for the remaining eigenvalues, we have a similar result:
+\[
+\lambda_{d+k}(A) = \lambda_{d+k}(B) = \Lambda^{(2)}_{k k}\quad \forall, k = 1,...,D-d.
+\]
+\end{proof}
+%\remark{
+%
+%}
 \subsection{Inclusion Lemma}
-\begin{lemma}{For any monotonously increasing and concave function $f(y)$, we have $R(f(p)) \subset R(p)$ and $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2$ }, where $p(x)$ is a twice-differentiable function. \label{rankonetheorem}
-\label{monotonously theorem}
+%Define $R_\ell(f(p))$ to be the set:
+%\[
+% \{x | \Pi_{H_{f(p)}}^{\perp} (x) \nabla f(p(x)) = 0,\lambda_{d+1}(H_{f(p)}(x))<  {f''(p(x))}\|\nabla p(x)\|_2^2\}.
+%\]
+%\remark{
+%Since ${f''(p(x))}\leq 0$, the condition for $R_\ell(f(p))$ is stronger than $R(f(p))$, thus $R_\ell(f(p))$ is part of $R(f(p))$.
+%}
+\begin{lemma}{
+For any monotonously increasing and concave function $f(y)$, i.e,  $f'(x)>0, f''(x) \leq 0$, for $x\in R({f(p)})$, we have the following satisfied simultaneously:
+ \begin{gather*}
+ \lambda_{d+1}(H_p(x)) < 0,\\
+\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2=0,
+%\frac{1}{f'(p(x))}( \lambda_{d+1} (H_{f(p)}(x))-{f''(p(x))}\|\nabla p(x)\|_2^2)\leq 0
+\end{gather*}
+The conditions $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2  =0$ implies $\Pi_{H_p}^\perp(x)\nabla p(x)=\bf 0$, which indicates that $x\in R(p)$. Thus, $R(f(p)) \subset R(p)$}. %where $p(x)$ is a twice-differentiable density function. 
+%\label{rankonetheorem}
+\label{monotonously theorem} 
 \end{lemma}
 
 \begin{proof}\label{monotonously theorem proof}
-For any two projections $\Pi_{H_p}(x), \Pi_{H_{f(p)}}(x)$ and their orthogonal complement projection $\Pi^\perp_{H_p}(x), \Pi^\perp_{H_{f(p)}}(x)$, we have the following two equalities:
-\[
-\begin{aligned}
-&\|\Pi_{H_p}^{\perp}(x) \nabla p(x)\|_2^2 +\|\Pi_{H_p}(x) \nabla p(x)\|_2^2 = \|\nabla p(x)\|_2^2,\\
-&\|\Pi_{H_{f(p)}}^{\perp}(x) \nabla p(x)\|_2^2 +\|\Pi_{H_{f(p)}}(x) \nabla p(x)\|_2^2 = \|\nabla p(x)\|_2^2.
-\end{aligned}
-\] 
-Note that $\|\Pi_{H_p}^{\perp}(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2$ is equivalent to \[
-\|\Pi_{H_p}(x)\nabla p(x)\|_2 \geq \|\Pi_{H_{f(p)}}(x)\nabla p(x)\|_2.\] To prove $\|\Pi_{H_p}(x)\nabla p(x)\|_2 \geq \|\Pi_{H_{f(p)}}(x)\nabla p(x)\|_2$ is equivalent to prove 
-\begin{equation}\label{relationHF}
-\nabla p(x)^T \Pi_{H_p}(x) \nabla p(x)\geq \nabla p(x)^T \Pi_{H_{f(p)}}(x) \nabla p(x),
-\end{equation} 
-which is clear, as the $d$ principal components of $H_p(x)$ are enlarged by adding a rank-one modification in the direction of $\nabla p(x)\nabla p(x)^T$ from $H_f(x)$; this is proved in Lemma \ref{projection_enlarge}.
-
-If $x\in R_{f(p(x))}$, we have $ \Pi_{H_{f(p)}}^{\perp} (x) \nabla p(x) = 0$, %i.e., $\nabla p(x)\perp {\rm span}\{ u^{d+1}_{H_f}(x), ...,u^{D}_{H_f}(x)\}$; 
-in other words, \[
-\nabla p(x)\in {\rm span}\{u^{1}_{H_f}(x), ..., u^{d}_{H_f}(x) \}.
-\] Note that $H_p(x)$ is a rank-one modification with $H_{f}(x)$ by 
+Recall that $H_p(x)$ is a rank-one modification with $H_{f}(x)$, by 
 \begin{equation}\label{rankone}
  H_{p}(x) =\frac{1}{ f'(p(x))} H_{f(p)}(x) - \frac{f''(p(x))}{ f'(p(x))} \nabla p(x) \nabla^T p(x) .
 \end{equation}
@@ -748,28 +947,113 @@ in other words, \[
 \[
 - f''(p(x))/f'(p(x))>0.
 \] 
-Because of $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2$, $\|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2=0$ indicates that we also have $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2=0$, i.e. $x \in R({p(x)})$, which implies $R({f(p(x))}) \subset R({p(x)})$. 
+Thus, $H_{p}(x)$ is obtained from a nonnegative rank-one modification. Lemma \ref{projection_enlarge} implies
+\begin{equation}\label{enlargement}
+\|\Pi_{H_p}(x)\nabla p(x)\|_2 \geq \|\Pi_{H_{f(p)}}(x)\nabla p(x)\|_2,
+\end{equation}
+where the projection matrix $\Pi_{H_p}$ and $\Pi_{H_{f_p}} $ are defined as
+\[
+\begin{aligned}
+&\Pi_{H_p}(x)= U_d(H_p(x))U^T_d(H_p(x)), \\
+&\Pi_{H_{f_p}}(x) = U_d(H_{f(p)}(x))U^T_d(H_{f_p}(x)).
+\end{aligned}
+\]
+Here, $U_d(H_p(x))$and $U^T_d(H_p(x))$ are the eigenvectors corresponding to the largest $d$ eigenvalues of $H_p(x)$ and $H_{f_p}(x)$, respectively.
+%\[
+%\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2
+%\]
+
+For any two projections $\Pi_{H_p}(x), \Pi_{H_{f(p)}}(x)$ and their orthogonal complement projection $\Pi^\perp_{H_p}(x), \Pi^\perp_{H_{f(p)}}(x)$, because of the orthogonal properties with respect to $\Pi_{H_p}^{\perp}(x)$ and $\Pi_{H_p}(x)$ , we have the following two equalities:
+\begin{equation}\label{ortho1}
+\|\Pi_{H_p}^{\perp}(x) \nabla p(x)\|_2^2 +\|\Pi_{H_p}(x) \nabla p(x)\|_2^2 = \|\nabla p(x)\|_2^2.
+\end{equation}
+Similarly, for $\Pi_{H_{f(p)}}^{\perp}(x)$ and $\Pi_{H_{f(p)}}(x)$, because of the orthogonal properties, we have
+\begin{equation}\label{ortho2}
+\|\Pi_{H_{f(p)}}^{\perp}(x) \nabla p(x)\|_2^2 +\|\Pi_{H_{f(p)}}(x) \nabla p(x)\|_2^2 = \|\nabla p(x)\|_2^2.
+\end{equation}
+Because of \eqref{ortho1} and \eqref{ortho2}, we know that the condition (squaring both sides in \eqref{enlargement})
+ \[
+\|\Pi_{H_p}(x)\nabla p(x)\|_2^2 \geq \|\Pi_{H_{f(p)}}(x)\nabla p(x)\|_2^2
+\] 
+implies
+\begin{equation}\label{square_result}
+\|\Pi_{H_p}^{\perp}(x)\nabla p(x)\|_2^2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2^2.
+\end{equation}
+Taking the square root of both sides in \eqref{square_result} will lead to
+\begin{equation}\label{llll}
+\|\Pi_{H_p}^{\perp}(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2.
+\end{equation}
+%To prove $\|\Pi_{H_p}(x)\nabla p(x)\|_2 \geq \|\Pi_{H_{f(p)}}(x)\nabla p(x)\|_2$ is equivalent to prove 
+%\begin{equation}\label{relationHF}
+%\nabla p(x)^T \Pi_{H_p}(x) \nabla p(x)\geq \nabla p(x)^T \Pi_{H_{f(p)}}(x) \nabla p(x),
+%\end{equation} 
+%which is clear, as the $d$ principal components of $H_p(x)$ are enlarged by adding a rank-one modification in the direction of $\nabla p(x)\nabla p(x)^T$ from $H_f(x)$; this is proved in Lemma \ref{projection_enlarge}.
+It is easy to obtain $\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x) = 0$. For any $x\in R_{f(p(x))}$, using the definition of a ridge, we have 
+\[
+ \Pi_{H_{f(p)}}^{\perp} (x) \nabla p(x) = 0,\quad \lambda_{d+1}(H_{f(p)}(x))<0
+\] %i.e., $\nabla p(x)\perp {\rm span}\{ u^{d+1}_{H_f}(x), ...,u^{D}_{H_f}(x)\}$; 
+%in other words, \[
+%\nabla p(x)\in {\rm span}\{u^{1}_{H_f}(x), ..., u^{d}_{H_f}(x) \}.
+%\] 
+Because of $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2 \leq \|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2$, we have 
+\[
+\|\Pi_{H_{f(p)}}^{\perp}(x)\nabla p(x)\|_2=0,
+\] 
+which implies that we also have $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2=0$. Next, we show $\lambda_{d+1}(H_p(x)) < 0$. Recall that, 
+\[
+ H_{p}(x) =\frac{1}{ f'(p(x))} H_{f(p)}(x) - \frac{f''(p(x))}{ f'(p(x))} \nabla p(x) \nabla^T p(x) .
+\]
+%Recall  in \eqref{rankone} is equivalent to
+%\[
+% H_{f(p)}(x) = f'(p(x))\{ H_{p}(x)+ \frac{f''(p(x))}{f'(p(x))} \nabla p(x) \nabla^T p(x) \}  .
+%\]
+ Thus, $-{f''(p(x))} \nabla p(x) \nabla^T p(x)$ is a semi-positive definite modification.
+  $\|\Pi_{H_p}^\perp(x)\nabla p(x)\|_2=0$, which implies that $\nabla p(x)$ is in the space spanned by
+ \[
+ {\cal S}_{H_{f(p)}(x)} = {\rm span}\{ u_1(H_{f(p)}(x)), u_2(H_{f(p)}(x)),..., u_d(H_{f(p)}(x))\}.
+ \]
+ Because $\nabla p(x) \in  {\cal S}_{H_{f(p)}(x)}$, the semi-positive rank-one modification
+ \[
+ -{f''(p(x))} \nabla p(x) \nabla^T p(x)
+ \] 
+ on the matrix $H_{f(p)}(x)$ is equivalent to a rank-one modification on the principal $d$-dimensional subspace ${\cal S}_{H_{f(p)}(x)}$, which will not affect the orthogonal complement subspace ${\cal S}^\perp_{H_{f(p)}(x)}$, which in turn means that the
+ eigenvalues from the $(d+1)$-th largest eigenvalue to the $D$-th will remain unchanged by Lemma \eqref{eigvenvalue}. % \cite{horn2012matrix}.
+%Using the Weyl's theorem \cite{horn2012matrix} on eigenvalues, 
+Thus, we have :
+\[
+\lambda_{d+1}(H_p(x))  = \frac{1}{f'(p(x))} \lambda_{d+1}(H_{f(p)}(x)) < 0, %\frac{1}{ f'(p(x))}(\lambda_{d+1}(H_{f(p)}(x))- {f''(p(x))} \lambda(\nabla p(x) \nabla^T p(x)))
+\]
+because of $f'(p(x))>0$ and ${f''(p(x))}<0$. %We know that,
+%\[
+%\lambda_{d+1}(H_{f(p)}(x)) \leq {f''(p(x))}\|\nabla p(x)\|_2^2,
+%\]
+%is equvilant to
+%\[
+%\lambda_{d+1}(H_p(x)) \leq 0.
+%\]
+In conclusion, $x$ also satisfies the ridge condition derived by $p(x)$, i.e., $x \in R({p(x)})$, which implies $R({f(p(x))}) \subset R({p(x)})$. 
 
 %We can conclude that, as long as $\nabla p(x)$ is in the space spanned by the top $d$ eigenvectors of $H_{f(p)}(x)$, $\nabla p(x)$ is in the space spanned by the top $d$ eigenvectors of $H_p(x)$, i.e. $\Pi_{H_p}^{\perp}(x) \nabla p(x) = 0$, which means $x \in R_{p(x)}$. Thus, we can conclude that $R_{f(p(x))} \subset R_{p(x)}$. 
 
 \end{proof}
 \subsection{Transformed Inequality}
 \begin{theorem}\label{Transformed Inequality Theorem}
-For the ridge $R(f(p))$ defined by the transformed nonlinear increasing and concave function $f$, we have:
+For the ridge $R(f(p))$ defined by the transformed nonlinear increasing and concave function $f$, we have
 \[
 {\rm Haus} (R(f(p)), {\cal M}_{R(f(p))}) \leq {\rm Haus} (R(p), {\cal M}_{R(p)}),
 \]
-where $R(p)$ and $R(f(p))$ are the $d$-dimensional ridges corresponding to $p$ and $f(p)$, ${\cal M}_{R(p)}$ and ${\cal M}_{R(f(p))}$ are the projections of $R(p)$ and $R(f(p))$ onto $\cal M$, respectively.
+where $R(p)$ and $R(f(p))$ are the $d$-dimensional ridges corresponding to $p$ and $f(p)$, and ${\cal M}_{R(p)}$ and ${\cal M}_{R(f(p))}$ are the projections of $R(p)$ and $R(f(p))$ onto $\cal M$, respectively.
 %$\sup_{x\in R_f} \inf_{y\in {\cal M}_R} \|x-y\|_2 \leq {\rm Haus} (R, {\cal M}_{R})$
 \end{theorem}
 
 \begin{proof}\label{Transformed Inequality}
-Since the projection from $R$ to ${\cal M}_{R}$ is surjective, for any $y^*\in {\cal M}_{R}$, such as
+Since the projection from $R$ to ${\cal M}_{R}$ is surjective, for any $y^*\in {\cal M}_{R}$, such that
 $\inf_{x\in R} \|x-y^*\| = \sup_{y\in {\cal M}_R} \inf_{x\in R}\|x-y\|_2$, there is $x_{y^*}\in R$ such as $y = P_{{\cal M}_R}(x_{y^*})$. 
 \[
 \begin{aligned}
 &\sup_{y\in {\cal M}_R} \inf_{x\in R}\|x-y\|_2 \\
-=&\inf_{x\in R} \|x-y^*\|_2 \leq \|x_{y^*} - y^*\|_2 = \inf_{z\in{\cal M}_R }\|x_{y^*}-z\|_2 \leq \sup_{x\in R}\inf_{z\in{\cal M}_R }\|x-z\|_2.
+=&\inf_{x\in R} \|x-y^*\|_2 \leq \|x_{y^*} - y^*\|_2 \\
+= &\inf_{z\in{\cal M}_R }\|x_{y^*}-z\|_2 \leq \sup_{x\in R}\inf_{z\in{\cal M}_R }\|x-z\|_2.
 \end{aligned}
 \]
 %Therefore, we have $\sup_{x\in {R}} \inf_{y\in {\cal M}_R}\|x-y\|_2\geq  \sup_{y\in {\cal M}_R} \inf_{x\in R}\|x-y\|_2$
@@ -785,15 +1069,15 @@ Because of \eqref{partial_ridge}, we can easily obtain
 \begin{equation}\label{m_R_f_1}
 \sup_{x\in R_f} \inf_{y\in {\cal M}_R} \|x-y\|_2 \leq {\rm Haus} (R, {\cal M}_{R}).
 \end{equation}
-Because of $R_f\subset {\cal M}_R$, 
+Because of $R_f\subset R$,  we have ${\cal M}_{R_f}\subset {\cal M}_R$.  Also, note that ${\cal M}_{R_f}$ is the projection of $R_f$ onto $\cal M$ and ${\cal M}_R$ is the projection of $R$ onto $\cal M$. We have
 \begin{equation}\label{m_R_f_2}
-\sup_{x\in R_f} \inf_{y\in {\cal M}_{R_f}} \|x-y\|_2=\sup_{x\in R_f} \inf_{y\in {\cal M}_R} \|x-y\|_2,
+\sup_{x\in R_f} \inf_{y\in {\cal M}_{R_f}} \|x-y\|_2=\sup_{x\in R_f} \inf_{y\in {\cal M}_R} \|x-y\|_2.
 \end{equation}
-Since the projection from $R_f$ to ${\cal M}_{R_f}$ is surjective, we also have
+The projection from $R_f$ to ${\cal M}_{R_f}$ is surjective, which implies that the Hausdorff distance equals the quasi-Hausdorff, \cite{chen2015asymptotic}, i.e., 
 \begin{equation}\label{m_R_f_3}
 {\rm Haus} (R_f, {\cal M}_{R_f}) = \sup_{x\in R_f} \inf_{y\in {\cal M}_{R_f}} \|x-y\|_2,
 \end{equation}
-Merging \eqref{m_R_f_1},\eqref{m_R_f_2},\eqref{m_R_f_3}, we have:
+Combining \eqref{m_R_f_1},\eqref{m_R_f_2}, and \eqref{m_R_f_3}, we have
 $
 {\rm Haus} (R_f, {\cal M}_{R_f}) \leq {\rm Haus} (R, {\cal M}_{R}).
 $
@@ -803,8 +1087,8 @@ $
 
 
 
-\bibliographystyle{imsart-number}
-%\bibliographystyle{imsart-nameyear}
+%\bibliographystyle{imsart-number}
+\bibliographystyle{imsart-nameyear}
 \bibliography{bibfile}
 
 

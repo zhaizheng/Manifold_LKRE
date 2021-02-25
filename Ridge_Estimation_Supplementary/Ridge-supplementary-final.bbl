@@ -1,0 +1,44 @@
+\begin{thebibliography}{3}
+% BibTex style file: imsart-nameyear.bst, 2017-11-03
+% Default style options (sort=1,type=nameyear).
+% Used options (sort=1,type=nameyear).
+
+\bibitem[\protect\citeauthoryear{Chen et~al.}{2015}]{chen2015asymptotic}
+\begin{barticle}[author]
+\bauthor{\bsnm{Chen},~\bfnm{Yen-Chi}\binits{Y.-C.}},
+  \bauthor{\bsnm{Genovese},~\bfnm{Christopher~R}\binits{C.~R.}},
+  \bauthor{\bsnm{Wasserman},~\bfnm{Larry}\binits{L.}} \betal{et~al.}
+(\byear{2015}).
+\btitle{Asymptotic theory for density ridges}.
+\bjournal{The Annals of Statistics}
+\bvolume{43}
+\bpages{1896--1928}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Genovese
+  et~al.}{2014}]{genovese2014nonparametric}
+\begin{barticle}[author]
+\bauthor{\bsnm{Genovese},~\bfnm{Christopher~R}\binits{C.~R.}},
+  \bauthor{\bsnm{Perone-Pacifico},~\bfnm{Marco}\binits{M.}},
+  \bauthor{\bsnm{Verdinelli},~\bfnm{Isabella}\binits{I.}},
+  \bauthor{\bsnm{Wasserman},~\bfnm{Larry}\binits{L.}} \betal{et~al.}
+(\byear{2014}).
+\btitle{Nonparametric ridge estimation}.
+\bjournal{The Annals of Statistics}
+\bvolume{42}
+\bpages{1511--1545}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Horn and Johnson}{2012}]{horn2012matrix}
+\begin{bbook}[author]
+\bauthor{\bsnm{Horn},~\bfnm{Roger~A}\binits{R.~A.}} \AND
+  \bauthor{\bsnm{Johnson},~\bfnm{Charles~R}\binits{C.~R.}}
+(\byear{2012}).
+\btitle{Matrix analysis}.
+\bpublisher{Cambridge university press}.
+\end{bbook}
+\endbibitem
+
+\end{thebibliography}

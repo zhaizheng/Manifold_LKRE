@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{natbib}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{url}
+\usepackage{amsmath,graphicx,amssymb}
+\bibpunct{(}{)}{;}{a}{}{,}
+%\newcommand{\ignore}[1]{}
+
+%\renewcommand{\baselinestretch}{1.7}
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{6in}
+\addtolength{\hoffset}{-0.45in}
+\addtolength{\voffset}{-0.425in}
+
+\newtheorem{thm}{Theorem}[section] %(If you want theorem numbered
+\newtheorem{lemma}{Lemma}[section] %%    with section number.
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{theorem}{Theorem}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\rarr}{\rightarrow}
+\renewcommand{\b}{\mathbf b}
+\newcommand{\qed}{{\unskip\nobreak\hfil\penalty50\hskip2em\vadjust{}
+            \nobreak\hfil$\Box$\parfillskip=0pt\finalhyphendemerits=0\par}}
+\newcommand{\ignore}[1]{}
+\renewcommand{\thefootnote}{}
+
+\newcommand{\yf}[1]{{\textcolor{red}{[Fan: #1]}}}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%Last change on May 22 by Jin%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{center}
+	{\bf \large Note to Editor}
+\end{center}
+The manuscript (XXX) titled `XXXXXXXX' was submitted
+to AOS a while ago. Back then, the referees pointed out that the main result of the manuscript requires linear growth rate of average degree, 
+which makes it not significant enough in theory. After a very long time of hard work, we have reached a stage where we think we have closed
+the gap. 
+
+We have researched a lot in this boundary of interest. Specifically,  in our new revision, we no longer require $p_{ij}$ are in the constant order, and have relaxed the condition to  $p_{ij}=O(\varphi_n n^{-1})$, where $\varphi_n\to\infty$ and $\varphi_n\le n$ . It covers the most interesting regime $p_{ij}=O(\log n/n)$, as both of the referee suggested, as a special case. Our models and main theorems in the paper have been modified largely as condition of $p_{ij}$ changed.\\
+
+We also highlight that, in the revised paper, 
+
+\begin{itemize}
+\item we have provided rigorous proofs of the strong consistency of the proposed method with a better $L_\infty$-norm bound relative to SCORE and its variants, where the almost surely consistency is not provided there (or in other existing literature sources), and the bound in the existing literature has been only in $L_F$; we believe our results under the current challenging region is very new,
+
+\item we have made compelling arguments why the current theorems under the current challenging region are novel,
+
+\item we have motivated the relation and difference with SCORE in terms of theory and application,
+
+\item we have provided response letters to both referees fully addressing their comments.
+\end{itemize}
+Since the manuscript has been very much revised, we contend that it should be regarded
+as a `new' paper. Nevertheless, we hope that we could keep the same name with a slight change (Strong Consistency Based on the $L_\infty$ convergence of eigenvectors in DCBM) for the new
+submission. We believe our current paper matches AOS standard and we hope you may
+give us the opportunity of a new submission for review.
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+\end{document}
