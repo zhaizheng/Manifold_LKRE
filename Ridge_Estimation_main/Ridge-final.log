@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.31)  24 FEB 2021 10:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.31)  25 FEB 2021 09:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,9 +453,6 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `margin' multiply defined.
 
-
-LaTeX Warning: Label `result_compare' multiply defined.
-
 )
 \openout1 = `Ridge-final.aux'.
 
@@ -650,7 +647,7 @@ File: demoMG-eps-converted-to.pdf Graphic file (type pdf)
 <use demoMG-eps-converted-to.pdf>
 Package pdftex.def Info: demoMG-eps-converted-to.pdf used on input line 503.
 (pdftex.def)             Requested size: 324.80124pt x 158.91692pt.
- [11 <./demoMG-eps-converted-to.pdf>] [12]
+ [11] [12 <./demoMG-eps-converted-to.pdf>]
 Underfull \hbox (badness 808) in paragraph at lines 605--606
 []\T1/ptm/m/n/11 Using the tri-an-gle in-equal-ity of ab-so-lute func-tion, we 
 de-rive the up-per bound for
@@ -684,37 +681,36 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [18]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 890.
-
-[19]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 903.
+(Font)              size <5> substituted on input line 893.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 903.
+(hyperref)                removing `math shift' on input line 907.
 
-[20]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 907.
+
+[19] [20]
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 958.
+(Font)              size <5> substituted on input line 962.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 958.
+(Font)              size <5> substituted on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 958.
+(hyperref)                removing `math shift' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 958.
+(hyperref)                removing `subscript' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 958.
+(hyperref)                removing `math shift' on input line 962.
 
 [21] [22]
 Package epstopdf Info: Source file: <demo123.eps>
@@ -725,41 +721,41 @@ Package epstopdf Info: Source file: <demo123.eps>
 (epstopdf)                    size: 7285 bytes
 (epstopdf)             Command: <repstopdf --outfile=demo123-eps-converted-to.p
 df demo123.eps>
-(epstopdf)             \includegraphics on input line 1049.
+(epstopdf)             \includegraphics on input line 1053.
 Package epstopdf Info: Output file is already uptodate.
- <demo123-eps-converted-to.pdf, id=541, 1344.02126pt x 331.2375pt>
+ <demo123-eps-converted-to.pdf, id=539, 1344.02126pt x 331.2375pt>
 File: demo123-eps-converted-to.pdf Graphic file (type pdf)
 
 <use demo123-eps-converted-to.pdf>
-Package pdftex.def Info: demo123-eps-converted-to.pdf used on input line 1049.
+Package pdftex.def Info: demo123-eps-converted-to.pdf used on input line 1053.
 (pdftex.def)             Requested size: 406.0pt x 100.05939pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1065.
+(hyperref)                removing `math shift' on input line 1069.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1065.
+(hyperref)                removing `subscript' on input line 1069.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1065.
+(hyperref)                removing `math shift' on input line 1069.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1065.
+(hyperref)                removing `math shift' on input line 1069.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1065.
+(hyperref)                removing `subscript' on input line 1069.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1065.
+(hyperref)                removing `math shift' on input line 1069.
 
 [23 <./demo123-eps-converted-to.pdf>] [24] [25] [26] [27]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 1268.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 1272.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -773,14 +769,14 @@ Package epstopdf Info: Source file: <compare5n.eps>
 (epstopdf)                    size: 65841 bytes
 (epstopdf)             Command: <repstopdf --outfile=compare5n-eps-converted-to
 .pdf compare5n.eps>
-(epstopdf)             \includegraphics on input line 1294.
+(epstopdf)             \includegraphics on input line 1298.
 Package epstopdf Info: Output file is already uptodate.
 
-<compare5n-eps-converted-to.pdf, id=610, 1229.59375pt x 386.44376pt>
+<compare5n-eps-converted-to.pdf, id=608, 1229.59375pt x 386.44376pt>
 File: compare5n-eps-converted-to.pdf Graphic file (type pdf)
 
 <use compare5n-eps-converted-to.pdf>
-Package pdftex.def Info: compare5n-eps-converted-to.pdf used on input line 1294
+Package pdftex.def Info: compare5n-eps-converted-to.pdf used on input line 1298
 .
 (pdftex.def)             Requested size: 406.0pt x 127.59758pt.
 
@@ -795,14 +791,14 @@ Package epstopdf Info: Source file: <vectorfield2.eps>
 (epstopdf)                    size: 167672 bytes
 (epstopdf)             Command: <repstopdf --outfile=vectorfield2-eps-converted
 -to.pdf vectorfield2.eps>
-(epstopdf)             \includegraphics on input line 1306.
+(epstopdf)             \includegraphics on input line 1310.
 Package epstopdf Info: Output file is already uptodate.
-<vectorfield2-eps-converted-to.pdf, id=612, 1262.7175pt x 391.4625pt>
+<vectorfield2-eps-converted-to.pdf, id=610, 1262.7175pt x 391.4625pt>
 File: vectorfield2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use vectorfield2-eps-converted-to.pdf>
 Package pdftex.def Info: vectorfield2-eps-converted-to.pdf used on input line 1
-306.
+310.
 (pdftex.def)             Requested size: 406.0pt x 125.86787pt.
 
 
@@ -818,13 +814,13 @@ Package epstopdf Info: Source file: <circle8n.eps>
 (epstopdf)                    size: 101948 bytes
 (epstopdf)             Command: <repstopdf --outfile=circle8n-eps-converted-to.
 pdf circle8n.eps>
-(epstopdf)             \includegraphics on input line 1324.
+(epstopdf)             \includegraphics on input line 1328.
 Package epstopdf Info: Output file is already uptodate.
- <circle8n-eps-converted-to.pdf, id=640, 860.21375pt x 558.085pt>
+ <circle8n-eps-converted-to.pdf, id=638, 860.21375pt x 558.085pt>
 File: circle8n-eps-converted-to.pdf Graphic file (type pdf)
 
 <use circle8n-eps-converted-to.pdf>
-Package pdftex.def Info: circle8n-eps-converted-to.pdf used on input line 1324.
+Package pdftex.def Info: circle8n-eps-converted-to.pdf used on input line 1328.
 
 (pdftex.def)             Requested size: 406.0pt x 263.40703pt.
 Package epstopdf Info: Source file: <sphere8.eps>
@@ -835,14 +831,14 @@ Package epstopdf Info: Source file: <sphere8.eps>
 (epstopdf)                    size: 102366 bytes
 (epstopdf)             Command: <repstopdf --outfile=sphere8-eps-converted-to.p
 df sphere8.eps>
-(epstopdf)             \includegraphics on input line 1325.
+(epstopdf)             \includegraphics on input line 1329.
 Package epstopdf Info: Output file is already uptodate.
 
-<sphere8-eps-converted-to.pdf, id=641, 849.1725pt x 568.1225pt>
+<sphere8-eps-converted-to.pdf, id=639, 849.1725pt x 568.1225pt>
 File: sphere8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use sphere8-eps-converted-to.pdf>
-Package pdftex.def Info: sphere8-eps-converted-to.pdf used on input line 1325.
+Package pdftex.def Info: sphere8-eps-converted-to.pdf used on input line 1329.
 (pdftex.def)             Requested size: 406.0pt x 271.62943pt.
  [30 <./circle8n-eps-converted-to.pdf> <./sphere8-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <duck_pig.eps>
@@ -853,14 +849,14 @@ Package epstopdf Info: Source file: <duck_pig.eps>
 (epstopdf)                    size: 258854 bytes
 (epstopdf)             Command: <repstopdf --outfile=duck_pig-eps-converted-to.
 pdf duck_pig.eps>
-(epstopdf)             \includegraphics on input line 1413.
+(epstopdf)             \includegraphics on input line 1416.
 Package epstopdf Info: Output file is already uptodate.
 
 <duck_pig-eps-converted-to.pdf, id=681, 1107.13625pt x 416.55624pt>
 File: duck_pig-eps-converted-to.pdf Graphic file (type pdf)
 
 <use duck_pig-eps-converted-to.pdf>
-Package pdftex.def Info: duck_pig-eps-converted-to.pdf used on input line 1413.
+Package pdftex.def Info: duck_pig-eps-converted-to.pdf used on input line 1416.
 
 (pdftex.def)             Requested size: 406.0pt x 152.75682pt.
 
@@ -868,7 +864,7 @@ Package pdftex.def Info: duck_pig-eps-converted-to.pdf used on input line 1413.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [31] [32 <./duck_pig-eps-converted-to.pdf>]
-Overfull \hbox (37.13454pt too wide) in paragraph at lines 1480--1481
+Overfull \hbox (37.13454pt too wide) in paragraph at lines 1483--1484
 \OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ^^E[](\OML/cmm/m/it/10.95 c[]\OT1/cmr
 /m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@
  \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$\T1/ptm/m/n/11 . We will then con-
@@ -880,19 +876,19 @@ L/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.9
 
 [33] [34]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1573.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1576.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1583--1584
+Underfull \hbox (badness 10000) in paragraph at lines 1586--1587
 
  []
 
 (./Ridge-final.bbl [35] [36])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1589.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1592.
  [37]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1589.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1592.
  (./Ridge-final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1589.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1589.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1592.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1592.
 
 Package rerunfilecheck Info: File `Ridge-final.out' has not changed.
 (rerunfilecheck)             Checksum: A899EF9D30EF63C3F83EB594A2CED20F;3129.
@@ -907,9 +903,9 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  8974 strings out of 492995
- 127099 string characters out of 6132704
- 219958 words of memory out of 5000000
- 12172 multiletter control sequences out of 15000+600000
+ 127106 string characters out of 6132704
+ 220077 words of memory out of 5000000
+ 12173 multiletter control sequences out of 15000+600000
  62682 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,13n,37p,1496b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -941,10 +937,10 @@ mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on Ridge-final.pdf (37 pages, 1208014 bytes).
+Output written on Ridge-final.pdf (37 pages, 1207570 bytes).
 PDF statistics:
  863 PDF objects out of 1000 (max. 8388607)
  759 compressed objects within 8 object streams
- 179 named destinations out of 1000 (max. 500000)
+ 178 named destinations out of 1000 (max. 500000)
  398 words of extra memory for PDF output out of 10000 (max. 10000000)
 

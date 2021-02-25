@@ -467,15 +467,15 @@ The Hausdorff distance is the largest margin between $\hat{\mathcal G}$ and ${\m
 \end{equation}
 where $|\cal \hat{G}|$ represents the number of samples in $\cal \hat{G}$.
 The distances, whether Hausdorff or average margin, are too complicated to bound or optimize directly. Because $\hat{\cal G}\subset \hat{R}$,  we also need to connect $\cal M$ with some ridge under the following assumption:
-\begin{assumption}\label{Data_assumption}
-Assume there is a density function $p(x)$ such that 
+\begin{claim}\label{Data_assumption}
+For any lower-dimensional manifold $\cal M$, there is a corresponding density function $p(x)$ such that 
 \begin{itemize}
 \item[1.] For the ridge $R(p(x))$ derived from $p(x)$: $R(p(x))={\cal M}$.
 \item[2.] The projection of $\hat{G}$ onto ${\cal M}$ satisfies ${\cal M}_{\hat{G}}\subset R(p(x))$.
 \item[3.] The distance between $R(p(x))$ and $\hat{R}(x)$ is comparable, where $\hat{R}(x)$ is a ridge derived from some empirical functions.
 \end{itemize}
 % \Yao{Assume the points on $\hat{\cal G}, \cal M_{\hat{G}}$ satisfy the ridge definition corresponding to two density functions $\hat{p}(x), p(x)$ respectively. }
-\end{assumption}
+\end{claim}
 \begin{remark}
 Since $\cal M$ can also be considered  as a ridge of some density function $p(x)$, the problem of estimating the distance between $\cal M_{\hat{\cal G}}$ and $\hat{\cal G}$ can be converted to one of estimating the distance between two ridges. 
 This assumption can be verified by selecting an appropriate form of $p(x)$, for instance by restricting $p(x)$ to nonzero only on $\cal M$. 
@@ -506,7 +506,7 @@ Lemma \ref{margin} builds the bridge between the geometric quantities and the an
 \end{figure}
 
 
-Using assumption \ref{Data_assumption} and Lemma \ref{margin}, we have, for any $\hat{x}_k\in \hat{\mathcal G}$, a $\tilde{y}\in {\mathcal M}$ that is the end point of the unit speed curve $\gamma(t)$ starting from $\hat{x}_k$. Meanwhile, both  $\hat{x}_k$ and $\tilde{y}$ satisfy the ridge definition in \eqref{ridgeDF}. 
+Using Claim \ref{Data_assumption} and Lemma \ref{margin}, we have, for any $\hat{x}_k\in \hat{\mathcal G}$, a $\tilde{y}\in {\mathcal M}$ that is the end point of the unit speed curve $\gamma(t)$ starting from $\hat{x}_k$. Meanwhile, both  $\hat{x}_k$ and $\tilde{y}$ satisfy the ridge definition in \eqref{ridgeDF}. 
 Thus, we know that 
 \begin{equation}\label{pointwise-bound}
 \min_{\tilde{y}_s\in {\mathcal M}_{\hat{\mathcal G}}}\|\hat{x}_k-\tilde{y}_s\|_2 \leq \|\hat{x}_k-\tilde{y}\|_2 = O (\|H_{\hat{p}}(\hat{x}_k)-H(\hat{x}_k)\|_F+\|g_{\hat{p}}(\hat{x}_k)-g(\hat{x}_k)\|_2  ).
@@ -849,15 +849,15 @@ when we have $r>r_0(h)$, we will still get $\mu(r,h)\in(0,1)$. To get a further 
 Since the form of $\mu(r,h)$ is complicated, it is not easy to get an optimum of $h$ from an objective with a term related to $\mu(r,h)$. To simplify our analysis, we make the following assumption:
 %By selecting the optimum $h$ in the estimation of the gradient and Hessian, we can get the estimate of the margin between $\hat{\cal G}$ and $\cal M_{\hat{\cal G}}$ as follows. First, we observe that improving only one term in \eqref{bias_result_final} can indeed improve the optimum function value.
 
-\begin{assumption}\label{assum}
-There is a hyper-parameter $r_1$ such that $\mu(r_1,h)$ yields a uniform upper bound $\ell\in(0,1)$.
-\end{assumption}
-\remark{
-Using this assumption, we can obtain a result on the margin or Hausdorff distance with respect to the estimated ridge. When $\mu(r_1,h)$ has a uniform bound $\ell$ for any $h$, we can neglect the specific form of $\mu(r_1,h)$ and obtain a result for the worst occasions (i.e. the most conservative result).
-}
+%\begin{assumption}\label{assum}
+%There is a hyper-parameter $r_1$ such that $\mu(r_1,h)$ yields a uniform upper bound $\ell\in(0,1)$.
+%\end{assumption}
+%\remark{
+%Using this assumption, we can obtain a result on the margin or Hausdorff distance with respect to the estimated ridge. When $\mu(r_1,h)$ has a uniform bound $\ell$ for any $h$, we can neglect the specific form of $\mu(r_1,h)$ and obtain a result for the worst occasions (i.e. the most conservative result).
+%}
 %For the following discussion, we can choose the super parameters $r_1$ that satisfy $r_1\geq r_0$. Assume that, for $r_1$, $\mu(r_1, h)<\ell$. ($\mu(r_1, h)$ is upper-bounded by $\ell<1$) 
 \begin{lemma}\label{improve_lemma}
-We have two functions $\nu(h) = a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ and $\nu_\ell (h) = \ell a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ with $m=2,4,\ell \in(0,1)$. Then, the optimal minimums of them have the following relationship:  $\min_h \nu_\ell (h) = \ell^{\frac{D+2}{D+6}}\min_h \nu(h)$
+We have two functions $\nu(h) = a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ and $\nu_\ell (h) = \ell a_0 h^2 + a_1 \sqrt{\frac{1}{nh^{D+m}}}$ with $m=2,4,\ell \in(0,1]$. Then, the optimal minimums of them have the following relationship:  $\min_h \nu_\ell (h) = \ell^{\frac{D+2}{D+6}}\min_h \nu(h)$.%, where $\ell = \sup_h \mu(r_1,h)\in (0,1]$.
 \end{lemma} 
 \begin{remark}
 The point-wise and uniform derivatives' variance differs with a term $\sqrt{\log n}$. This term can also be taken into consideration by choosing a different form of $a_1$. In other words, when the Hausdorff distance is anything other than the average margin, we can assume $a_1=\bar{a}_1*\sqrt{\log n}$, where $\bar{a}_1$ is the parameter considered for the average-margin measurement.
@@ -881,13 +881,17 @@ From Lemma \ref{improve_lemma}, we know that by reducing the bias with a scalar 
 %Substitute this into \eqref{f_mu}, after which it clearly becomes $f_\mu (h^{**}) = \mu^{\frac{D+4}{D+8}}f(h^*)$.
 %\end{lemma}
 From Lemma \ref{improve_lemma}, we know that, by replacing the SCRE with {\it l}-SCRE, the upper bound of the margin or Hausdorff of an optimal ridge will be reduced by at least a scalar $\ell^{\frac{D+2}{D+6}}$.
-\begin{theorem} If the Assumption \ref{assum} is satisfied and the optimal $h$ is chosen with respect to the sample size $n$, %there is $r_1$ such that $\mu(r_1, h)\leq \ell,\ell\in(0,1)$, 
+\begin{theorem}
+ %If the Assumption \ref{assum} is satisfied and the optimal $h$ is chosen with respect to the sample size $n$, 
+ If the optimal $h$ is chosen with respect to the sample size $n$, 
+ %there is $r_1$ such that $\mu(r_1, h)\leq \ell,\ell\in(0,1)$, 
 and then the upper bound with respect to the average margin or Hausdorff distance of the ridge obtained from {\it l}-SCRE will be reduced by at least a scalar $\ell^{\frac{D+2}{D+6}}$,  i.e. 
 %as long as the hyper-parameter $r$ of {\it l}-SCRE is set as $r = r_1$, i.e.
 \begin{gather*}
 {\rm Marg}(\hat{\cal G}_{{\it l-}{\rm SCRE}}, {\cal M}_{\hat{\cal G}_{{\it l}-{\rm SCRE}}}) \leq \ell^{\frac{D+2}{D+6}} {\rm Marg}(\hat{\cal G}_{\rm SCRE}, {\cal M}_{\hat{\cal G}_{\rm SCRE}}).\\
-{\rm Haus}(\hat{\cal G}_{{\it l-}{\rm SCRE}}, {\cal M}_{\hat{\cal G}_{{\it l}-{\rm SCRE}}}) \leq \ell^{\frac{D+2}{D+6}} {\rm Haus}(\hat{\cal G}_{\rm SCRE}, {\cal M}_{\hat{\cal G}_{\rm SCRE}}).
+{\rm Haus}(\hat{\cal G}_{{\it l-}{\rm SCRE}}, {\cal M}_{\hat{\cal G}_{{\it l}-{\rm SCRE}}}) \leq \ell^{\frac{D+2}{D+6}} {\rm Haus}(\hat{\cal G}_{\rm SCRE}, {\cal M}_{\hat{\cal G}_{\rm SCRE}}),
 \end{gather*}
+where $\ell\in(0,1]$. Furthermore, if $r$ is selected as $r = r_1$ such that $\ell=\sup_h \mu(r_1, h)<1$, the factor will satisfy $\ell^{\frac{D+2}{D+6}}<1$ strictly.
 \end{theorem}
 \begin{remark}
 From the proof of Lemma \ref{improve_lemma}, we can see the optimal $h=O(n^{-\frac{1}{D+8}})$.  When increasing the samples $n$ to infinity, the optimal $h$ will tend to be close to or equal to 0. With the optimal $h$ chosen, the number of effective samples around $x$ equals $O(n^\frac{D+7}{D+8})$.
@@ -1347,7 +1351,7 @@ In the two figures below, we show how the average margin and Hausdorff distance,
 %\label{table:margin}
 %\end{table}
 
-It is clear from Table \ref{result_compare} and Figure \ref{fig:circle6} that, under the same parameter setting (such as $h$ and noise level $\sigma$), the algorithm of {\it l}-SCRE yields a ridge with a margin much smaller than that of SCRE. The rate of increase of the distance measurement for {\it l}-SCRE is much lower than that for SCRE with the increasing $h$. This phenomenon is also explained in our theoretical analysis.
+It is clear from Table \ref{result_compare}, Table \ref{result_compare2} and Figure \ref{fig:circle6} that, under the same parameter setting (such as $h$ and noise level $\sigma$), the algorithm of {\it l}-SCRE yields a ridge with a margin much smaller than that of SCRE. The rate of increase of the distance measurement for {\it l}-SCRE is much lower than that for SCRE with the increasing $h$. This phenomenon is also explained in our theoretical analysis.
 
 \begin{table}[h]
 \caption{The margin and Hausdorff between $\cal \hat{G}$ and $\mathcal M$ vary with $h$ for SCRE, {\it l}-SCRE, MFIT-i and MFIT-ii on the 1-dimensional circle}.
@@ -1379,7 +1383,7 @@ It is clear from Table \ref{result_compare} and Figure \ref{fig:circle6} that, u
 \begin{table}[h]
 \caption{The margin and Hausdorff between $\cal \hat{G}$ and $\mathcal M$ vary with $h$ for SCRE, {\it l}-SCRE, MFIT-i and MFIT-ii on the 2-dimensional sphere}.
 \resizebox{14cm}{!}{
-\label{result_compare}
+\label{result_compare2}
 \begin{tabular}{c|c|ccccccccc}\hline
   & $h$   & 0.1   &0.2 &0.3 &0.4&0.5&0.6&0.7&0.8&0.9\\\hline
   \multirow{4}{*}{Marg}  &SCRE 
@@ -1402,9 +1406,8 @@ It is clear from Table \ref{result_compare} and Figure \ref{fig:circle6} that, u
 \end{tabular}}
 \end{table}
 
-In Table \ref{result_compare}, we provide another randomly generated circle-sample dataset. As shown in the table, when $h$ is too small (for instance in the cases shown by `-'), we cannot ensure that the domain of $x$ contains enough samples to run both MFIT-i and MFIT-ii. By comparing the margin and Hausdorff distance, we can conclude that the result of {\it l}-SCRE is more stable and competitive than the results of related methods.
-
-
+%In Table \ref{result_compare}, we provide another randomly generated circle-sample dataset. 
+As shown in Table \ref{result_compare} and Table \ref{result_compare2}, when the radius is too small, we cannot ensure that the domain which is centered at $x$ and with a radius of $h$, contains enough samples to run both MFIT-i and MFIT-ii. By comparing the margin and Hausdorff distance, we can conclude that the result of {\it l}-SCRE is more stable and competitive than the results of related methods.
 
 \subsection{Real Data Set}
 We also test the performance of our algorithm using the Coil20 \cite{Coil20} dataset. The data is collected by rotating an object with 360 degrees. For each object, there are 72 images corresponding to a particular angle. Therefore, the images for each object can be supposed to reside on a one-dimensional manifold, since the underlying parameter is the angle.
