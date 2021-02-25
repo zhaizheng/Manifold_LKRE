@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.31)  25 FEB 2021 09:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.31)  25 FEB 2021 11:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -806,41 +806,45 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28] [29 <./compare5n-eps-converted-to.pdf> <./vectorfield2-eps-converted-to.pd
 f>]
-Package epstopdf Info: Source file: <circle8n.eps>
-(epstopdf)                    date: 2021-02-23 11:59:32
-(epstopdf)                    size: 177009 bytes
-(epstopdf)             Output file: <circle8n-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-23 11:59:46
-(epstopdf)                    size: 101948 bytes
-(epstopdf)             Command: <repstopdf --outfile=circle8n-eps-converted-to.
-pdf circle8n.eps>
+Package epstopdf Info: Source file: <circle9.eps>
+(epstopdf)                    date: 2021-02-25 11:08:25
+(epstopdf)                    size: 180905 bytes
+(epstopdf)             Output file: <circle9-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-25 11:09:00
+(epstopdf)                    size: 102794 bytes
+(epstopdf)             Command: <repstopdf --outfile=circle9-eps-converted-to.p
+df circle9.eps>
 (epstopdf)             \includegraphics on input line 1328.
 Package epstopdf Info: Output file is already uptodate.
- <circle8n-eps-converted-to.pdf, id=638, 860.21375pt x 558.085pt>
-File: circle8n-eps-converted-to.pdf Graphic file (type pdf)
+ <circle9-eps-converted-to.pdf, id=638, 772.8875pt x 585.18625pt>
+File: circle9-eps-converted-to.pdf Graphic file (type pdf)
 
-<use circle8n-eps-converted-to.pdf>
-Package pdftex.def Info: circle8n-eps-converted-to.pdf used on input line 1328.
-
-(pdftex.def)             Requested size: 406.0pt x 263.40703pt.
-Package epstopdf Info: Source file: <sphere8.eps>
-(epstopdf)                    date: 2021-02-23 10:18:13
-(epstopdf)                    size: 175322 bytes
-(epstopdf)             Output file: <sphere8-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-02-23 10:18:39
-(epstopdf)                    size: 102366 bytes
-(epstopdf)             Command: <repstopdf --outfile=sphere8-eps-converted-to.p
-df sphere8.eps>
+<use circle9-eps-converted-to.pdf>
+Package pdftex.def Info: circle9-eps-converted-to.pdf used on input line 1328.
+(pdftex.def)             Requested size: 406.0pt x 307.39703pt.
+Package epstopdf Info: Source file: <sphere8n.eps>
+(epstopdf)                    date: 2021-02-25 10:48:13
+(epstopdf)                    size: 181665 bytes
+(epstopdf)             Output file: <sphere8n-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-02-25 10:48:48
+(epstopdf)                    size: 103787 bytes
+(epstopdf)             Command: <repstopdf --outfile=sphere8n-eps-converted-to.
+pdf sphere8n.eps>
 (epstopdf)             \includegraphics on input line 1329.
 Package epstopdf Info: Output file is already uptodate.
 
-<sphere8-eps-converted-to.pdf, id=639, 849.1725pt x 568.1225pt>
-File: sphere8-eps-converted-to.pdf Graphic file (type pdf)
+<sphere8n-eps-converted-to.pdf, id=639, 905.3825pt x 599.23875pt>
+File: sphere8n-eps-converted-to.pdf Graphic file (type pdf)
 
-<use sphere8-eps-converted-to.pdf>
-Package pdftex.def Info: sphere8-eps-converted-to.pdf used on input line 1329.
-(pdftex.def)             Requested size: 406.0pt x 271.62943pt.
- [30 <./circle8n-eps-converted-to.pdf> <./sphere8-eps-converted-to.pdf>]
+<use sphere8n-eps-converted-to.pdf>
+Package pdftex.def Info: sphere8n-eps-converted-to.pdf used on input line 1329.
+
+(pdftex.def)             Requested size: 406.0pt x 268.71315pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30]
 Package epstopdf Info: Source file: <duck_pig.eps>
 (epstopdf)                    date: 2020-06-14 19:22:05
 (epstopdf)                    size: 387234 bytes
@@ -849,22 +853,18 @@ Package epstopdf Info: Source file: <duck_pig.eps>
 (epstopdf)                    size: 258854 bytes
 (epstopdf)             Command: <repstopdf --outfile=duck_pig-eps-converted-to.
 pdf duck_pig.eps>
-(epstopdf)             \includegraphics on input line 1416.
+(epstopdf)             \includegraphics on input line 1418.
 Package epstopdf Info: Output file is already uptodate.
-
-<duck_pig-eps-converted-to.pdf, id=681, 1107.13625pt x 416.55624pt>
+ <duck_pig-eps-converted-to.pdf, id=655, 1107.13625pt x 416.55624pt>
 File: duck_pig-eps-converted-to.pdf Graphic file (type pdf)
 
 <use duck_pig-eps-converted-to.pdf>
-Package pdftex.def Info: duck_pig-eps-converted-to.pdf used on input line 1416.
+Package pdftex.def Info: duck_pig-eps-converted-to.pdf used on input line 1418.
 
 (pdftex.def)             Requested size: 406.0pt x 152.75682pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31] [32 <./duck_pig-eps-converted-to.pdf>]
-Overfull \hbox (37.13454pt too wide) in paragraph at lines 1483--1484
+ [31 <./circle9-eps-converted-to.pdf> <./sphere8n-eps-converted-to.pdf>] [32 <.
+/duck_pig-eps-converted-to.pdf>]
+Overfull \hbox (37.13454pt too wide) in paragraph at lines 1485--1486
 \OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ^^E[](\OML/cmm/m/it/10.95 c[]\OT1/cmr
 /m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@
  \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$\T1/ptm/m/n/11 . We will then con-
@@ -876,19 +876,19 @@ L/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.9
 
 [33] [34]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1576.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1586--1587
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1578.
+ [35]
+Underfull \hbox (badness 10000) in paragraph at lines 1588--1589
 
  []
 
-(./Ridge-final.bbl [35] [36])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1592.
+(./Ridge-final.bbl [36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1594.
  [37]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1594.
  (./Ridge-final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1592.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1592.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1594.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1594.
 
 Package rerunfilecheck Info: File `Ridge-final.out' has not changed.
 (rerunfilecheck)             Checksum: A899EF9D30EF63C3F83EB594A2CED20F;3129.
@@ -904,11 +904,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  8974 strings out of 492995
  127106 string characters out of 6132704
- 220077 words of memory out of 5000000
+ 221077 words of memory out of 5000000
  12173 multiletter control sequences out of 15000+600000
  62682 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,37p,1496b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,13n,37p,1496b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc} </Users/dizh
 eng/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
@@ -937,7 +937,7 @@ mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on Ridge-final.pdf (37 pages, 1207570 bytes).
+Output written on Ridge-final.pdf (37 pages, 1210322 bytes).
 PDF statistics:
  863 PDF objects out of 1000 (max. 8388607)
  759 compressed objects within 8 object streams
