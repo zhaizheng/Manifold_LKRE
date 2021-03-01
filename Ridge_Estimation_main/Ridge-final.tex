@@ -158,9 +158,9 @@ Manifold-fitting algorithms intend to recover the low-dimensional manifold in th
 
 
 Overall, the problem of manifold estimation is treated as a statistical manifold-fitting problem under the observed data $\{x_i, i=1:n\}$. The observed data, it may be assumed, are constructed as 
-\[
+\begin{equation}\label{model_ass}
 x_i=\tilde{x}_i+\epsilon_i, i=1:n,
-\] 
+\end{equation}
 where noiseless data $\{\tilde{x}_i, i= 1:n\}$ are assumed to be sampled from some unknown manifold $\mathcal M$ and the noise $\epsilon_i$ obeys the rules of some distributions, such as the Gaussian distribution.  %With these observations, we can solve the manifold-interpolation problem to pull an outlier $x$ back to the manifold.  
 Thus, the manifold-estimation problem is aimed at recovering a set of new samples $\{\hat{x}_i, i= 1:n'\}$, which we label $\hat{\cal G}$ from the data $\{x_i\}$ such that the recovered samples in $\hat{\cal G}$ stay in the real manifold $\mathcal M$ as much as possible. Normally, we can obtain $\hat{\cal G}$ by constructing an estimator using the data:
 \begin{equation}\label{Estimator}
@@ -1329,7 +1329,7 @@ For each point $\hat{x}$ belonging to ${\cal \hat{G}}$ or ${\cal \hat{G}}_\ell$,
    \includegraphics[width=\linewidth]{sphere8n.eps} 
    %\setcaptionwidth{6in}
    \vspace{-1cm}
-   \caption{Margin and Hausdorff illustration for ridges obtained from {\it l}-SCRE and SCRE}
+   \caption{Margin and Hausdorff illustration for ridges obtained from {\it l}-SCRE and SCRE on the 1D circle and the 2D sphere}
    \label{fig:circle6}
 \end{figure}
 
