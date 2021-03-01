@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{34}
 % BibTex style file: imsart-nameyear.bst, 2017-11-03
 % Default style options (sort=1,type=nameyear).
 % Used options (sort=1,type=nameyear).
@@ -117,6 +117,20 @@
 \end{barticle}
 \endbibitem
 
+\bibitem[\protect\citeauthoryear{Fefferman, Mitter and
+  Narayanan}{2016}]{fefferman2016testing}
+\begin{barticle}[author]
+\bauthor{\bsnm{Fefferman},~\bfnm{Charles}\binits{C.}},
+  \bauthor{\bsnm{Mitter},~\bfnm{Sanjoy}\binits{S.}} \AND
+  \bauthor{\bsnm{Narayanan},~\bfnm{Hariharan}\binits{H.}}
+(\byear{2016}).
+\btitle{Testing the manifold hypothesis}.
+\bjournal{Journal of the American Mathematical Society}
+\bvolume{29}
+\bpages{983--1049}.
+\end{barticle}
+\endbibitem
+
 \bibitem[\protect\citeauthoryear{Fefferman et~al.}{2018}]{fefferman2018fitting}
 \begin{binproceedings}[author]
 \bauthor{\bsnm{Fefferman},~\bfnm{Charles}\binits{C.}},
@@ -129,6 +143,22 @@
 In \bbooktitle{Conference On Learning Theory}
 \bpages{688--720}.
 \end{binproceedings}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Fefferman
+  et~al.}{2019}]{fefferman2019reconstruction}
+\begin{barticle}[author]
+\bauthor{\bsnm{Fefferman},~\bfnm{Charles}\binits{C.}},
+  \bauthor{\bsnm{Ivanov},~\bfnm{Sergei}\binits{S.}},
+  \bauthor{\bsnm{Kurylev},~\bfnm{Yaroslav}\binits{Y.}},
+  \bauthor{\bsnm{Lassas},~\bfnm{Matti}\binits{M.}} \AND
+  \bauthor{\bsnm{Narayanan},~\bfnm{Hariharan}\binits{H.}}
+(\byear{2019}).
+\btitle{Reconstruction and Interpolation of Manifolds. I: The Geometric Whitney
+  Problem}.
+\bjournal{Foundations of Computational Mathematics}
+\bpages{1--99}.
+\end{barticle}
 \endbibitem
 
 \bibitem[\protect\citeauthoryear{Genovese et~al.}{2012}]{genovese2012manifold}

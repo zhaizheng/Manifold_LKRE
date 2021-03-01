@@ -44,7 +44,7 @@ Thank you very much for your careful reading our paper as well as your invaluabl
 
 To the best of our knowledge, the reserved terminology manifold learning refers to an approach to non-linear dimensionality reduction (Isomap and a number of others), which is a method trying to find the new representation in a lower-dimensional space ($R^d$) by approximately keeping the geometry properties of the input which resides in a high-dimensional ambient space ($R^D$). This line of research is mainly about learning the embedding. 
 
-In this paper, we aim to learn the actual manifold in the ambient space. Therefore, our work is not on manifold learning. We call this manifold fitting. There are not many research in this direction. We provided the origin of this line of work in the beginning of paper and also cited the previous of pioneering work from Charles Fefferman 2018 with a few others. \\ 
+In this paper, we aim to learn the actual manifold in the ambient space. Therefore, our work is not on manifold learning. We call this manifold fitting. There are not many research in this direction. We provided the origin of this line of work in the beginning of paper and also cited the previous of pioneering work from Charles Fefferman et al. 2016, 2018, 2019 with a few others. \\ 
 
 
 
@@ -54,16 +54,16 @@ In this paper, we aim to learn the actual manifold in the ambient space. Therefo
 {\bf Answer:}\\
 We do {\bf not} agree. In fact, in our work, the model in Equation (1) on page 2 assumes the data are generated as 
 \begin{equation}\label{model}
-x_i=\tilde{x}_i+\epsilon_i,
+x_i=\tilde{x}_i+\epsilon_i, i=1,...,n,
 \end{equation}
-where $\tilde{x}_i$ is the noiseless signal which belong to some manifold, and $\epsilon_i$ is the noise. We use the observations $x_i$ to recover the manifold. Therefore, we did not bypass consideration of the noise in our model.\\
+where $\{\tilde{x}_i, i=1,...,n\}$ are the noiseless signal which belong to some manifold, and $\{\epsilon_i, i=1,...,n\}$ are the i.i.d noise from some distribution, such as the multivariate Gaussian distribution.  We use the observations $x_i$ to recover the manifold. Therefore, we did not bypass consideration of the noise in our model.\\
 
 The reach is a global concept which describes the degree of curvature for the manifold. A larger {``\it reach''} indicates the samples resides further from the manifold can also has a unique projection onto $\cal M$. Therefore, the manifold is more flat globally.\\
 
 We do not prefer to model the properties of the noise in conjunction with the reach in the first place. The reason are two folded:
 \begin{itemize}
 \item Reach is one way to describe the curvature; if we model the noise in conjunction with the reach, we simply reduce the level of the problem,
-\item We only assume the noise (Gaussian) is added to the pure data in the ambient space; this is a more general setup in manifold fitting just like the one in Charles Fefferman 20xx (see our response to your 4th comment below). 
+\item We only assume the noise (Gaussian) is added to the pure data in the ambient space; this is a more general setup in manifold fitting just like the one in Charles Fefferman et al. 2016, 2018, 2019 (see our response to your 4th comment below). 
 \end{itemize}
 
 
@@ -95,11 +95,11 @@ Assumption 3.4 is a bit stronger by requiring $\mu(r,h)$ to be upper-bounded by 
 \noindent ``\textit{The simulations are too limited as there are many other competing methods to recover the manifolds that are considered, and these manifolds are too simple to be of much interest.'' }\\
 
 {\bf Answer:}\\
-We almost compared all methods that we know of in this filed on the one-dimensional manifold to show the good recovery property of our method under the criteria of average margin and Hausdorff distance. The manifold fitting results (theory and numerical results) do not rely on the data set too much. Note that we coded the abstract fitting algorithm from  Charles Fefferman 20xx as well. 
+We almost compared all methods that we know of in this filed on the one-dimensional manifold to show the good recovery property of our method under the criteria of average margin and Hausdorff distance. The manifold fitting results (theory and numerical results) do not rely on the data set too much. Note that we coded the abstract fitting algorithm from  Charles Fefferman et al. 2016, 2018, 2019 as well. 
 
 In our revised paper, we have added another experiment corresponding to a 2-dimensional sphere in the 3D ambient space. We can add more experiments by increase the $D$ and $d$. We choose not to do so since we have decided to  add a real data analysis where we roughly know the truth, to support our theory instead. 
 
-Our method can be applied to general input of data with an manifold hypothesis. We used the above two cases since we do know the manifold hypothesis is true in the data and we completely know the pure manifold so that we can evaluate the distance for comparison.
+Our method can be applied to general input of data with a manifold hypothesis. We used the above two cases since we do know the manifold hypothesis is true in the data and we completely know the pure manifold so that we can evaluate the distance for comparison.
 
 %\noindent ``\textit {1. My major concern is about the condition needed for the establishment of results in this paper.. The authors need $P^*$ to have constant eigengap, which is far too strong and not realistic (it implies $p_{ij}$ are in the constant order). Under this regime, the results the authors present are expected, not surprising, and more or less have been long known to theoretical researchers working on community detection. This limits the depth and scope of this paper. In community detection, a less trivial regime is when $p_{i,j}=o(1)$. A more interesting case is when $p_{ij}$ is around $\log n/n$. An exciting regime is when $p_{ij}=O(\log n/n)$, where the exact recovery is impossible. I think this paper is a good start and the authors are encouraged to continue along this path.}''\\
 %Answer: \\
